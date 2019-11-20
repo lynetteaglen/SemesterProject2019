@@ -1,60 +1,56 @@
-window.rollDice = () => {
-  const maxNum = 6;
-  const rollDice = Math.ceil(Math.random() * maxNum);
-  console.log("You rolled", rollDice);
-
-  if (rollDice == 6) {
-    console.log("It's your lucky day! Take another spin");
-  }
+let playerOne = {
+  tile: 0,
+  PlayerName: "",
+  isPlayerTurn: true,
+  playerImg: ""
 };
 
+let playerTwo = {
+  tile: 0,
+  PlayerName: "",
+  isPlayerTurn: false,
+  playerImg: ""
+};
 
-Function RollDice(){
-  const maxNum = 6;
+function setPlayerIcon() {
+  document.getElementById('tile_0').innerHTML += <img src="${playerOne.playerImg}" width="100px" />
+  document.getElementById('tile_0').innerHTML += <img src="${playerTwo.playerImg}" width="100px" />
 }
-/*
-let playerOne = 0;
-let playerTwo = 0;
 
-for (; playerOne < 30, playerTwo < 30;) {
-  playerOne += (rollDice())
-  if (playerOne >= 30) {
-    console.log("Player 1 has won the game!")
+setPlayerIcon();
+
+/*Board Game*/
+
+function rollDiceAndMovePlayer() {
+  let whichPlayer;
+  if (playerOne.isPlayersTurn === true) {
+    whichPlayer = playerOne;
   }
+  else {
+    whichPlayer = playerTwo;
+  }
+  const { tile, playerImg } = whichPlayer;
 
+  let diceRoll = (Math.floor(Math.random() * 6) + 1);
+  console.log(whichPlayer.tile);
+  whichPlayer.tile += diceRoll;
 
-}
+  if (diceRoll === 6) {
+    document.getElementById('tile' + tile).innerHTML += `<img src="${playerImg}" id="playerOne" class="hide" width="100px" />`;
+    console.log('You have another roll');
+    rollDiceAndMovePlayer();
+  }
+  else {
+    document.getElementById('tile' + whichPlayer.tile).innerHTML += `<img src="${playerImg}" id="playerTwo" class="hide" width="100px" />`;
 
-
-*/
-
-
-/*
-
-
-var spiller_1 = 0
-var spiller_2 = 0
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
-
-for(; spiller_1<30, spiller_2<30;) {
-   spiller_1 += (getRandomInt(6))
-   if (spiller_1 >= 30){
-    console.log('spiller 1 har vunnet!')
-   }
-
-
-    console.log('spiller 1 er nå på felt ', spiller_1, ' , spiller 2 er nå på felt', spiller_2, ' ! spiller 2 sin tur til å kaste')
-
-    spiller_2 += (getRandomInt(6))
-    if (spiller_2 >= 30){
-      console.log('spiller 2 har vunnet!')
+    if (playerOne.isPlayersTurn === true) {
+      playerOne.isPlayersTurn = false;
+      playerTwo.isPlayersTurn = true;
     }
-
-
-    console.log('spiller 1 er nå på felt ', spiller_1, ' , spiller 2 er nå på felt', spiller_2, ' ! spiller 1 sin tur til å kaste !')
+    else {
+      playerOne.isPlayersTurn = true;
+      playerTwo.isPlayersTurn = false;
+    }
+  }
 }
 
-*/

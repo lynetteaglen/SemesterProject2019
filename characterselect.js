@@ -1,24 +1,73 @@
-/*Fetching the API*/
+//Fetching the API
+
 function getInfo(id) {
   fetch("https://anapioficeandfire.com/api/characters/" + id)
-    .then(response => response.json())
-    .then(result => populateCards(result));
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+
+      //Inserting information into the cards 
+      function populateCards() {
+        document.getElementById("popupContent").innerHTML +=
+          `<div class="[ characters ]">
+            <p>${result.title}</p>
+            <p>${result.name}</p>
+            </div>
+          `;
+      }
+
+      showPopUp();
+      populateCards();
+    })
 }
 
+//Popup
+
+
+let popup = document.getElementById("myPopup");
+let span = document.getElementsByClassName("closeBtn")[0];
+
+//Shows the Popup modal 
+
+function showPopUp() {
+  popup.style.display = "block";
+};
 
 
 
-/* Inserting information into the cards */
-/*
-function populateCards() {
-  document.getElementById("character-cards").innerHTML +=
-    `<div class="[ characters ]">
-    <p>${character.title}</p>
-    <p>${character.name}</p>
-    <p>${character.culture}</p>
-    </div>
-    `;
-}
+window.onclick = function (event) {
+  popup.style.display = "none";
+};
+
+span.onclick = function () {
+  popup.style.display = "none";
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
