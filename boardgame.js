@@ -7,7 +7,7 @@ let playerOne = {
 
 let playerTwo = {
   tile: 0,
-  PlayerName: "",
+  PlayerName: "${result.name}",
   isPlayerTurn: false,
   playerImg: ""
 };
