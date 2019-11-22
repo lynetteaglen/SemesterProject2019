@@ -48,14 +48,11 @@ function getInfo(id) {
 }
 
 //save data to session storage
-sessionStorage.setItem('Player', 'Character');
-
+sessionStorage.setItem('Player1', 'Character1');
+sessionStorage.setItem('Player2', 'Character2');
 //get saved data from session storage
-let data = sessionStorage.getItem('Player');
+// let data = sessionStorage.getItem('Player');
 
-// Remove saved data from sessionStorage
-sessionStorage.removeItem('Player');
 
-// Remove all saved data from sessionStorage
-sessionStorage.clear();
+
 

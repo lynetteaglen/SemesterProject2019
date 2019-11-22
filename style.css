@@ -105,6 +105,8 @@ body {
 /*Board game*/
 /*Tiles- styling*/
 .board-game {
+  display: grid;
+  grid-template-columns: repeat(10, 10%);
   margin-left: 3%;
   margin-right: 0%;
   padding-top: 3%;
