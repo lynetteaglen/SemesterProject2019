@@ -1,23 +1,27 @@
 
-//Popup
+// Getting ID and classes from HTML and converting them to JS variables. 
 let popup = document.getElementById("myPopup");
-let span = document.getElementsByClassName("closeBtn")[0];
+let closeButton = document.getElementsByClassName("closeBtn")[0];
 
-//Shows the Popup modal 
-function showPopUp() {
-  popup.style.display = "block";
-};
 
 // Hides the popup modal 
 function hidePopUp() {
-  // Hides modal outside the modal
-  window.onclick = function () {
-    popup.style.display = "none";
-  };
-  // Hides modal by clicking on the span  
-  span.onclick = function () {
-    popup.style.display = "none";
-  };
+  popup.style.display = "none";
+}
+
+// Changes the CSS display: none to block. Popup displayes in browser. 
+function showPopUp(result) {
+  popup.style.display = "block";
+
+  // Inserting information into the cards 
+  document.getElementById("popupContent").innerHTML =
+    `<div class="[ characters ]">
+      <p>${result.titles}</p>
+      <p>${result.name}</p>
+      </div>
+      <span onclick="hidePopUp()">&times;</span>
+      <button id="selectBtn" onclick="">Select Player</button>
+    `;
 }
 
 //Fetching the API
@@ -28,31 +32,13 @@ function getInfo(id) {
     })
     .then((result) => {
       console.log(result);
-
-      //Inserting information into the cards 
-      function populateCards() {
-        document.getElementById("popupContent").innerHTML = "";
-        document.getElementById("popupContent").innerHTML +=
-          `<div class="[ characters ]">
-            <p>${result.titles}</p>
-            <p>${result.name}</p>
-            </div>
-          `;
-      }
-
-      showPopUp();
-      populateCards();
-      hidePopUp();
-      populateCards.removeItem();
+      showPopUp(result);
     })
 }
 
 //save data to session storage
 sessionStorage.setItem('Player1', 'Character1');
 sessionStorage.setItem('Player2', 'Character2');
-//get saved data from session storage
-// let data = sessionStorage.getItem('Player');
-
 
 
 
