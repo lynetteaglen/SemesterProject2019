@@ -37,8 +37,18 @@ function getInfo(id) {
 }
 
 //save data to session storage
-sessionStorage.setItem('Player1', 'Character1');
+
+let selectedPlayer1 = document.getElementById("myBtn").addEventListener;
+let selectedPlayer2 = document.getElementById("myBtn").addEventListener;
+
+
+function selectPlayerAndStoreInSession() {
+
+}
+
+
+
+
+sessionStorage.setItem('Player1', '/Images/${_.svg}/');
 sessionStorage.setItem('Player2', 'Character2');
-
-
 
