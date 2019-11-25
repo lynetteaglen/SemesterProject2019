@@ -1,20 +1,23 @@
+// Gets information from session storage
+let player1image = sessionStorage.getItem("player");
+
 // Player objects
 let playerOne = {
   tile: 0,
   PlayerName: "",
   isPlayerTurn: true,
-  playerImg: sessionStorage.getItem("Player1")
+  playerImg: `/Images/${playerImage}.svg`
 };
 
 let playerTwo = {
   tile: 0,
   PlayerName: "",
   isPlayerTurn: false,
-  playerImg: sessionStorage.getItem("Player2")
-
+  playerImg: `/Images/${playerImage}.svg`
 
 };
 
+// player1Image
 
 //Make the dice roll (1-6). This function deletes the player, amd creates a new player when it is updated by clicking the button. 
 function rollDiceAndMovePlayer() {
@@ -44,7 +47,7 @@ function rollDiceAndMovePlayer() {
 
 //  Displaying player information in the current tile they are placed in. 
 console.log(sessionStorage.getItem("Player1"));
-document.getElementById(`tile_${playerOne.tile}`).innerHTML += `<div>${playerOne.playerImg}</div>`
-document.getElementById(`tile_${playerTwo.tile}`).innerHTML += `<div>${playerTwo.playerImg}</div>`
+document.getElementById(`tile_${playerOne.tile}`).innerHTML += `<div>${playerOne.playerImage} width="50px" </div>`
+document.getElementById(`tile_${playerTwo.tile}`).innerHTML += `<div>${playerTwo.playerImage} width="50px" </div>`
 
 
