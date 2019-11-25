@@ -20,9 +20,14 @@ function showPopUp(result) {
       <p>${result.name}</p>
       </div>
       <span onclick="hidePopUp()">&times;</span>
-      <button id="selectBtn" onclick="">Select Player</button>
+      <button id="selectBtn" onclick="getPlayerImage()">Select Player</button>
     `;
+
+
 }
+
+
+
 
 //Fetching the API
 function getInfo(id) {
@@ -38,22 +43,14 @@ function getInfo(id) {
 
 //save data to session storage
 
-let selectedPlayer1 = document.getElementById("myBtn").addEventListener;
-let selectedPlayer2 = document.getElementById("myBtn").addEventListener;
 
 
-// function selectPlayerAndStoreInSession("key", "value") {
 
+// function getPlayerImage() {
+//   sessionStorage.getItem("Player1", "/images/photo1.svg")
 // }
 
-sessionStorage.setItem('Player1', 'Character1');
-sessionStorage.setItem('Player2', 'Character2');
+// getPlayerImage();
 
-
-function getPlayerImage() {
-  sessionStorage.getItem("Player1", "/images/photo1.svg")
-
-}
-
-let photo = sessionStorage.getItem("Player1")
+// let photo = sessionStorage.getItem("Player1")
 
