@@ -42,13 +42,18 @@ let selectedPlayer1 = document.getElementById("myBtn").addEventListener;
 let selectedPlayer2 = document.getElementById("myBtn").addEventListener;
 
 
-function selectPlayerAndStoreInSession() {
+// function selectPlayerAndStoreInSession("key", "value") {
+
+// }
+
+sessionStorage.setItem('Player1', 'Character1');
+sessionStorage.setItem('Player2', 'Character2');
+
+
+function getPlayerImage() {
+  sessionStorage.getItem("Player1", "/images/photo1.svg")
 
 }
 
-
-
-
-sessionStorage.setItem('Player1', '/Images/${_.svg}/');
-sessionStorage.setItem('Player2', 'Character2');
+let photo = sessionStorage.getItem("Player1")
 
