@@ -22,16 +22,17 @@ function showPopUp(result) {
       </div>
       <span onclick="hidePopUp()">&times;</span>
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage()">Select Player</button> 
-    `; // getting an attribute. the name who is saved here is for example arya startk
+    `; // getting an attribute. the name who is saved here is for example Arya Stark
 }
 
-// function that makes a variable and connects it with the button in HTML. Then getting the data attribute and sets the item in session storage.
+// Function that makes a variable and connects it with the button in HTML. 
+// Then getting the data attribute and sets the item in session storage.
 function saveStorage() {
   let btn = document.getElementById("selectBtn");
   let charName = btn.getAttribute("data-character");
-  sessionStorage.setItem("player", charName);
-}
+  sessionStorage.setItem("player1", charName);
 
+}
 
 //Fetching the API
 function getInfo(id) {
@@ -44,25 +45,4 @@ function getInfo(id) {
       showPopUp(result);
     })
 }
-
-//save data to session storage
-
-
-
-// hvis bildet spiller 1 finnes i session storage så lagre i spiller to. 
-// else så lagrer du det i spiller 1. 
-
-// denne spilleren valgte dette bildet. 
-
-
-// i
-
-
-// function getPlayerImage() {
-//   sessionStorage.getItem("Player1", "/images/photo1.svg")
-// }
-
-// getPlayerImage();
-
-// let photo = sessionStorage.getItem("Player1")
 

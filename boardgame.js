@@ -1,13 +1,11 @@
 
-
-
-// Gets information from session storage
+// Gets information from session storage.
 let playerImage = sessionStorage.getItem("player");
 
-//  Displaying player information in the current tile they are placed in. 
+// Displaying player information in the current tile they are placed in. 
 console.log(sessionStorage.getItem("player"));
 
-// Player objects
+// Player objects with variables and values. 
 let playerOne = {
   tile: 0,
   PlayerName: "",
@@ -24,15 +22,17 @@ let playerTwo = {
   itsMe: false
 };
 
-document.getElementById(`tile_0`).innerHTML += `<img src="${playerOne.playerImg}" width="60px" border-radius="50px" />`
-document.getElementById(`tile_0`).innerHTML += `<img src="${playerTwo.playerImg}" width="60px" border-radius="50px"/>`
+
+// Placing the players in tile 0.
+document.getElementById(`tile_0`).innerHTML += `<img src="${playerOne.playerImg}" width="60px"  />`
+document.getElementById(`tile_0`).innerHTML += `<img src="${playerTwo.playerImg}" width="60px" />`
 
 
 // This function makes an empty object. The if statement populates the object with the object and its variable and sets it to true. 
-// The else statement switching the playertwo to equals to true. 
-function rollDiceAndMovePlayer() {
+// The else statement switching the playerTwo to true. 
+function rollDiceAndMovePlayer() { // Find current player.
 
-  // populate empty object with either 1 or 2 depending on whos turn it is.
+  // Populate empty object with either playerOne or playerTwo depending on whos turn it is.
   let currentPlayer = {};
 
   if (playerOne.isPlayerTurn === true) {
@@ -42,20 +42,12 @@ function rollDiceAndMovePlayer() {
     currentPlayer = playerTwo;
   }
 
-  // Makes Dice into a variable that has a method that makes the dice span from 1-6 whole numbers. 
+
+  // Makes a variable named diceRoll. Contains a method that makes the dice span from 1-6 (whole numbers ->floor). 
   let diceRoll = (Math.floor(Math.random() * 6) + 1)
-  // currentPlayer has a value 
+  // This will display the value that currentPlayer contains. 
   console.log(currentPlayer);
-
-
-  // Gets the objects and tile and updates the tile with the result of the diceRoll. 
-  currentPlayer.tile = currentPlayer.tile + diceRoll;
-  console.log(currentPlayer.tile);
-
-  // Placing the information from object inside the HTML. Then adds the image gotten from the previous page. 
-  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}">`
-
-  // Change player turn when the dice rolls 6. 
+  // Change the players turn back when the dice rolls 6. If not rolled 6, display the player on the tile. 
   if (diceRoll === 6) {
     console.log('Have another roll!');
 
@@ -65,6 +57,14 @@ function rollDiceAndMovePlayer() {
     document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
   }
 
+
+  // Gets the objects and tile and updates the tile with the result of the diceRoll. 
+  currentPlayer.tile = currentPlayer.tile + diceRoll;
+  console.log(currentPlayer.tile);
+
+  // Placing the information from object inside the HTML. Then adds the image gotten from the previous page. 
+  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}">`
+
   //switching characters
   if (currentPlayer === playerOne) {
     playerOne.isPlayerTurn = false;
@@ -73,6 +73,7 @@ function rollDiceAndMovePlayer() {
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
   }
+
 
 }
 
