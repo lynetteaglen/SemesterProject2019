@@ -24,15 +24,22 @@ function showPopUp(result) {
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage()">Select Player</button> 
     `; // getting an attribute. the name who is saved here is for example Arya Stark
 }
-
+let chosen = false;
 // Function that makes a variable and connects it with the button in HTML. 
 // Then getting the data attribute and sets the item in session storage.
 function saveStorage() {
   let btn = document.getElementById("selectBtn");
   let charName = btn.getAttribute("data-character");
-  sessionStorage.setItem("player1", charName);
-
+  let name = ["player1", "player2"];
+  if (chosen === false) {
+    sessionStorage.setItem(name[0], charName);
+    chosen = true;
+  }
+  else {
+    sessionStorage.setItem(name[1], charName);
+  }
 }
+
 
 //Fetching the API
 function getInfo(id) {
@@ -46,3 +53,6 @@ function getInfo(id) {
     })
 }
 
+// function selectCharacter() {
+
+// }

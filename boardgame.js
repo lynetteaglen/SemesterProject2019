@@ -1,9 +1,11 @@
 
 // Gets information from session storage.
-let playerImage = sessionStorage.getItem("player");
+let playerOneImage = sessionStorage.getItem("player1");
+let playerTwoImage = sessionStorage.getItem("player2");
 
 // Displaying player information in the current tile they are placed in. 
-console.log(sessionStorage.getItem("player"));
+console.log(sessionStorage.getItem("player1"));
+console.log(sessionStorage.getItem("player2"));
 
 // Player objects with variables and values. 
 let playerOne = {
@@ -11,7 +13,7 @@ let playerOne = {
   id: 1,
   PlayerName: "",
   isPlayerTurn: true,
-  playerImg: `/Images/${playerImage}.svg`,
+  playerImg: `/Images/${playerOneImage}.svg`,
 };
 
 let playerTwo = {
@@ -19,7 +21,7 @@ let playerTwo = {
   id: 2,
   PlayerName: "",
   isPlayerTurn: false,
-  playerImg: `/Images/${playerImage}.svg`,
+  playerImg: `/Images/${playerTwoImage}.svg`,
 };
 
 
