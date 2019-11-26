@@ -28,8 +28,6 @@ document.getElementById(`tile_0`).innerHTML += `<img src="${playerOne.playerImg}
 document.getElementById(`tile_0`).innerHTML += `<img src="${playerTwo.playerImg}" width="60px" border-radius="50px"/>`
 
 
-
-
 // This function makes an empty object. The if statement populates the object with the object and its variable and sets it to true. 
 // The else statement switching the playertwo to equals to true. 
 function rollDiceAndMovePlayer() {
@@ -60,15 +58,14 @@ function rollDiceAndMovePlayer() {
   // Change player turn when the dice rolls 6. 
   if (diceRoll === 6) {
     console.log('Have another roll!');
+
     rollDiceAndMovePlayer();
   }
   else {
     document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
   }
 
-
-  //switch characters
-
+  //switching characters
   if (currentPlayer === playerOne) {
     playerOne.isPlayerTurn = false;
     playerTwo.isPlayerTurn = true;
@@ -76,11 +73,6 @@ function rollDiceAndMovePlayer() {
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
   }
-
-  // Creates a variable that should be able to delete the previous placed player 
-  //let element = document.getElementById(`tile_${playerOne.playerImg}`);
-  //element.parentNode.removeChild(element);
-
 
 }
 
