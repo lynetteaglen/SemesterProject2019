@@ -121,6 +121,10 @@ body {
   padding: 20px;
 }
 
+.player-image {
+  border-radius: 50px;
+}
+
 @font-face {
   font-family: got;
   src: url(Fonts/got.ttf);

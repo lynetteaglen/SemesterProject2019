@@ -1,54 +1,87 @@
+
+
+
 // Gets information from session storage
 let playerImage = sessionStorage.getItem("player");
+
+//  Displaying player information in the current tile they are placed in. 
+console.log(sessionStorage.getItem("player"));
 
 // Player objects
 let playerOne = {
   tile: 0,
   PlayerName: "",
   isPlayerTurn: true,
-  playerImg: `/Images/${playerImage}.svg`
+  playerImg: `/Images/${playerImage}.svg`,
+  itsMe: true
 };
 
 let playerTwo = {
   tile: 0,
   PlayerName: "",
   isPlayerTurn: false,
-  playerImg: `/Images/${playerImage}.svg`
+  playerImg: `/Images/${playerImage}.svg`,
+  itsMe: false
 
 };
 
-
-//  Displaying player information in the current tile they are placed in. 
-console.log(sessionStorage.getItem("Player1"));
-document.getElementById(`tile_${playerOne.tile}`).innerHTML += `<img src="${playerOne.playerImg}" width="60px" />`
-document.getElementById(`tile_${playerTwo.tile}`).innerHTML += `<img src="${playerTwo.playerImg}" width="60px" />`
+document.getElementById(`tile_0`).innerHTML += `<img src="${playerOne.playerImg}" width="60px" border-radius="50px" />`
+document.getElementById(`tile_0`).innerHTML += `<img src="${playerTwo.playerImg}" width="60px" border-radius="50px"/>`
 
 
 
-//Make the dice roll (1-6). This function deletes the player, amd creates a new player when it is updated by clicking the button. 
+
+// This function makes an empty object. The if statement populates the object with the object and its variable and sets it to true. 
+// The else statement switching the playertwo to equals to true. 
 function rollDiceAndMovePlayer() {
-  let diceRoll = (Math.floor(Math.random() * 6) + 1)
-  // Gets the objects and tile and updates the tile with the result of the diceRoll. 
-  playerOne.tile = playerOne.tile + diceRoll;
 
-  // Placing the information from object inside the HTML. Then adds the image gotten from the previous page. 
-  document.getElementById(`tile_${playerOne.tile}`).innerHTML += `<div>${playerOne.playerImg}</div>`
+  let currentPlayer = {};
 
-  // Creates a variable that should be able to delete the previous placed player 
-  let element = document.getElementById(`tile_${playerOne.playerImg}`);
-  element.parentNode.removeChild(element);
-
-
-  // Should move the player every other turn. 
-  if (playerOne.isPlayersTurn === true) {
-    playerOne.isPlayersTurn = false;
-    playerTwo.isPlayersTurn = true;
+  if (playerOne.isPlayerTurn === true) {
+    currentPlayer = playerOne;
   }
   else {
-    playerOne.isPlayersTurn = true;
-    playerTwo.isPlayersTurn = false;
+    currentPlayer = playerTwo;
   }
-}
 
+  // Makes Dice into a variable that has a method that makes the dice span from 1-6 whole numbers. 
+  let diceRoll = (Math.floor(Math.random() * 6) + 1)
+  console.log(currentPlayer);
+
+
+  // Gets the objects and tile and updates the tile with the result of the diceRoll. 
+  currentPlayer.tile = currentPlayer.tile + diceRoll;
+  console.log(currentPlayer.tile);
+
+  // Placing the information from object inside the HTML. Then adds the image gotten from the previous page. 
+  document.getElementById(`tile_${currentPlayer.tile}`).innerHTML += `<img src="${currentPlayer.playerImg}">`
+
+  // Change player turn when the dice rolls 6. 
+  if (diceRoll === 6) {
+    document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
+    console.log('Have another roll!');
+    rollDiceAndMovePlayer();
+  }
+  else {
+    document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
+  }
+
+
+  //switch characters
+
+  if (currentPlayer === playerOne) {
+    playerOne.isPlayerTurn = false;
+    playerTwo.isPlayerTurn = true;
+  } else {
+    playerOne.isPlayerTurn = true;
+    playerTwo.isPlayerTurn = false;
+  }
+
+  // Creates a variable that should be able to delete the previous placed player 
+  //let element = document.getElementById(`tile_${playerOne.playerImg}`);
+  //element.parentNode.removeChild(element);
+
+
+}
 
 
