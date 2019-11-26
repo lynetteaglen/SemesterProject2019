@@ -22,7 +22,6 @@ let playerTwo = {
   isPlayerTurn: false,
   playerImg: `/Images/${playerImage}.svg`,
   itsMe: false
-
 };
 
 document.getElementById(`tile_0`).innerHTML += `<img src="${playerOne.playerImg}" width="60px" border-radius="50px" />`
@@ -35,6 +34,7 @@ document.getElementById(`tile_0`).innerHTML += `<img src="${playerTwo.playerImg}
 // The else statement switching the playertwo to equals to true. 
 function rollDiceAndMovePlayer() {
 
+  // populate empty object with either 1 or 2 depending on whos turn it is.
   let currentPlayer = {};
 
   if (playerOne.isPlayerTurn === true) {
@@ -46,6 +46,7 @@ function rollDiceAndMovePlayer() {
 
   // Makes Dice into a variable that has a method that makes the dice span from 1-6 whole numbers. 
   let diceRoll = (Math.floor(Math.random() * 6) + 1)
+  // currentPlayer has a value 
   console.log(currentPlayer);
 
 
@@ -54,11 +55,10 @@ function rollDiceAndMovePlayer() {
   console.log(currentPlayer.tile);
 
   // Placing the information from object inside the HTML. Then adds the image gotten from the previous page. 
-  document.getElementById(`tile_${currentPlayer.tile}`).innerHTML += `<img src="${currentPlayer.playerImg}">`
+  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}">`
 
   // Change player turn when the dice rolls 6. 
   if (diceRoll === 6) {
-    document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
     console.log('Have another roll!');
     rollDiceAndMovePlayer();
   }
