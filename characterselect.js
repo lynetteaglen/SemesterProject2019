@@ -9,11 +9,11 @@ function hidePopUp() {
   popup.style.display = "none";
 }
 
-// Changes the CSS display: none to block. Popup displayes in browser. 
+// Shows the popup
 function showPopUp(result) {
   popup.style.display = "block";
 
-  // Inserting information into the cards 
+  // making a variable that changes the name of the character in sessions storage to create a path to the image
   let thisName = result.name.replace(/ /g, ''); // making a variable to get the name of character. 
   document.getElementById("popupContent").innerHTML =
     `<div class="[ characters ]">
@@ -24,9 +24,13 @@ function showPopUp(result) {
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage()">Select Player</button> 
     `; // getting an attribute. the name who is saved here is for example Arya Stark
 }
+
+
 let chosen = false;
-// Function that makes a variable and connects it with the button in HTML. 
-// Then getting the data attribute and sets the item in session storage.
+
+// Saving the value of the cards into session storage
+// Making two players that is set to false. When selected is turns into true
+// if the character is selected then it changes player two to true. 
 function saveStorage() {
   let btn = document.getElementById("selectBtn");
   let charName = btn.getAttribute("data-character");
@@ -53,6 +57,4 @@ function getInfo(id) {
     })
 }
 
-// function selectCharacter() {
 
-// }
