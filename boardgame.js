@@ -17,8 +17,8 @@ let playerTwo = {
 };
 
 // Placing the players in tile 0.
-document.getElementById("tile_0").innerHTML += `<img src="${playerOne.playerImg}" width="60px"  />`
-document.getElementById("tile_0").innerHTML += `<img src="${playerTwo.playerImg}" width="60px" />`
+document.getElementById("tile_0").innerHTML += `<div id="token1"> <img src="${playerOne.playerImg}" width="60px" /></div>`
+document.getElementById("tile_0").innerHTML += `<div id="token2"> <img src="${playerTwo.playerImg}" width="60px" /></div>`
 
 
 function boardFunction() {
@@ -31,23 +31,51 @@ function boardFunction() {
     whichPlayer = playerTwo
   }
 
-  let diceRoll = (Math.floor(Math.random() * 6) + 1)
+  let diceRoll = 29;  // (Math.floor(Math.random() * 6) + 1)
+
+
+  switch (whichPlayer.tile) {
+    case trapOne.tileNum:
+      alert(trapOne.alertMessage);
+      break;
+
+    case trapTwo.tileNum:
+      alert(trapTwo.alertMessage);
+      break;
+
+    case trapThree.tileNum:
+      alert(trapThree.alertMessage);
+      break;
+
+    case trapFour.tileNum:
+      alert(trapFour.alertMessage);
+      break;
+
+    case trapFive.tileNum:
+      alert(trapFive.alertMessage);
+      break;
+
+    default:
+  }
+
 
 
   if (diceRoll === 6) {
 
-    // moves 6
     document.getElementById('tile_' + whichPlayer.tile).innerHTML = "";
+    // document.getElementById('tile_' + whichPlayer.tile).innerHTML = `<div id="token1" </div>`;
+    // document.getElementById('tile_' + whichPlayer.tile).innerHTML = `<div id="token2" </div>`;
+
     whichPlayer.tile += diceRoll;
 
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
+    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px" border-radius="50px"/>`;
     console.log('Have another roll!');
     boardFunction();
   }
   else {
     document.getElementById('tile_' + whichPlayer.tile).innerHTML = "";
     whichPlayer.tile += diceRoll;
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" class="hide" width="60px" border-radius="50px"/>`;
+    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px" border-radius="50px"/>`;
     if (whichPlayer === playerOne) {
       playerOne.isPlayerTurn = false;
       playerTwo.isPlayerTurn = true;
@@ -56,9 +84,9 @@ function boardFunction() {
       playerTwo.isPlayerTurn = false;
     }
   }
+
+
 }
-
-
 
 
 

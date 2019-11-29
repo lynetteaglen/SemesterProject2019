@@ -107,8 +107,9 @@ body {
 .board-game {
   display: grid;
   grid-template-columns: repeat(10, 10%);
-  margin-left: 3%;
-  margin-right: 0%;
+  row-gap: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding-top: 3%;
   padding-bottom: 5.5%;
 }
@@ -116,9 +117,9 @@ body {
 .board {
   display: inline-block;
   border: 5px solid #DDDDE0;
-  width: 100px;
-  height: 100px;
-  padding: 20px;
+  width: 70px;
+  height: 70px;
+  padding: 15px;
 }
 
 .player-image {

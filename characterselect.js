@@ -7,6 +7,7 @@ let closeButton = document.getElementsByClassName("closeBtn")[0];
 // Hides the popup modal 
 function hidePopUp() {
   popup.style.display = "none";
+
 }
 
 // Shows the popup
@@ -26,7 +27,7 @@ function showPopUp(result) {
 }
 
 
-let chosen = false;
+let player = false;
 
 // Saving the value of the cards into session storage
 // Making two players that is set to false. When selected is turns into true
@@ -35,13 +36,14 @@ function saveStorage() {
   let btn = document.getElementById("selectBtn");
   let charName = btn.getAttribute("data-character");
   let name = ["player1", "player2"];
-  if (chosen === false) {
+  if (player === false) {
     sessionStorage.setItem(name[0], charName);
-    chosen = true;
+    player = true;
   }
   else {
     sessionStorage.setItem(name[1], charName);
   }
+  popup.style.display = "none";
 }
 
 
