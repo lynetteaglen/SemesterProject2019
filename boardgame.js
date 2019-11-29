@@ -31,33 +31,7 @@ function boardFunction() {
     whichPlayer = playerTwo
   }
 
-  let diceRoll = 29;  // (Math.floor(Math.random() * 6) + 1)
-
-
-  switch (whichPlayer.tile) {
-    case trapOne.tileNum:
-      alert(trapOne.alertMessage);
-      break;
-
-    case trapTwo.tileNum:
-      alert(trapTwo.alertMessage);
-      break;
-
-    case trapThree.tileNum:
-      alert(trapThree.alertMessage);
-      break;
-
-    case trapFour.tileNum:
-      alert(trapFour.alertMessage);
-      break;
-
-    case trapFive.tileNum:
-      alert(trapFive.alertMessage);
-      break;
-
-    default:
-  }
-
+  let diceRoll = 29; // (Math.floor(Math.random() * 6) + 1)
 
 
   if (diceRoll === 6) {
@@ -84,8 +58,6 @@ function boardFunction() {
       playerTwo.isPlayerTurn = false;
     }
   }
-
-
 }
 
 
