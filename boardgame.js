@@ -1,6 +1,6 @@
 
 // Player objects + attributes and values. 
-let playerOne = {
+const playerOne = {
   tile: 0,
   id: 1,
   PlayerName: sessionStorage.getItem("player1"),
@@ -8,7 +8,7 @@ let playerOne = {
   playerImg: `/Images/${sessionStorage.getItem("player1")}.svg`,
 };
 
-let playerTwo = {
+const playerTwo = {
   tile: 0,
   id: 2,
   PlayerName: sessionStorage.getItem("player2"),
@@ -20,19 +20,25 @@ let playerTwo = {
 document.getElementById("tile_0").innerHTML += `<div id="token1"> <img src="${playerOne.playerImg}" width="60px" /></div>`
 document.getElementById("tile_0").innerHTML += `<div id="token2"> <img src="${playerTwo.playerImg}" width="60px" /></div>`
 
+// Function that figures which player turn it is, and rolls dice and updates the player object
+// If player rolls 6, the player gets another turn
+// If not the tile is emptied and places the player into current tile
+// Then it changes the player turn with an if/else statement, 
+
+// let whichPlayer;
 
 function boardFunction() {
+
   let whichPlayer;
 
   if (playerOne.isPlayerTurn === true) {
     whichPlayer = playerOne;
   }
   else {
-    whichPlayer = playerTwo
+    whichPlayer = playerTwo;
   }
 
-  let diceRoll = 29; // (Math.floor(Math.random() * 6) + 1)
-
+  let diceRoll = (Math.floor(Math.random() * 6) + 1);
 
   if (diceRoll === 6) {
 
@@ -42,14 +48,14 @@ function boardFunction() {
 
     whichPlayer.tile += diceRoll;
 
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px" border-radius="50px"/>`;
-    console.log('Have another roll!');
+    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px"/>`;
+    console.log('The Gods are with you. Continue your journey!');
     boardFunction();
   }
   else {
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML = "";
+    document.getElementById('tile_' + whichPlayer.tile).innerHTML = ``;
     whichPlayer.tile += diceRoll;
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px" border-radius="50px"/>`;
+    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px"/>`;
     if (whichPlayer === playerOne) {
       playerOne.isPlayerTurn = false;
       playerTwo.isPlayerTurn = true;
@@ -58,6 +64,37 @@ function boardFunction() {
       playerTwo.isPlayerTurn = false;
     }
   }
+
+  // Switch statement setting the traps. 
+  switch (whichPlayer.tile) {
+    case trapOne.tileNum:
+      trapOne.tileNum - trapOne.penalty;
+      window.alert(trapOne.alertMessage);
+      break;
+
+    case trapTwo.tileNum:
+      trapTwo.tileNum - trapTwo.penalty;
+      window.alert(trapTwo.alertMessage);
+      break;
+
+    case trapThree.tileNum:
+      trapThree.tileNum - trapThree.penalty;
+      window.alert(trapThree.alertMessage);
+      break;
+
+    case trapFour.tileNum:
+      trapFour.tileNum - trapFour.penalty;
+      window.alert(trapFour.alertMessage);
+      break;
+
+    case trapFive.tileNum:
+      trapFive.tileNum - trapFive.penalty;
+      window.alert(trapFive.alertMessage);
+      break;
+
+    default:
+  }
+
 }
 
 

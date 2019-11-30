@@ -30,7 +30,7 @@ function showPopUp(result) {
 let player = false;
 
 // Saving the value of the cards into session storage
-// Making two players that is set to false. When selected is turns into true
+// Making two players that is set to false. When selected it turns into true
 // if the character is selected then it changes player two to true. 
 function saveStorage() {
   let btn = document.getElementById("selectBtn");

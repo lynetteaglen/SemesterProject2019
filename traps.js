@@ -31,29 +31,29 @@ const trapFive = {
 }
 
 
-switch (whichPlayer.tile) {
-    case trapOne.tileNum:
-        alert(trapOne.alertMessage);
-        break;
+// switch (whichPlayer.tile) {
+//     case trapOne.tileNum:
+//         alert(trapOne.alertMessage);
+//         break;
 
-    case trapTwo.tileNum:
-        alert(trapTwo.alertMessage);
-        break;
+//     case trapTwo.tileNum:
+//         alert(trapTwo.alertMessage);
+//         break;
 
-    case trapThree.tileNum:
-        alert(trapThree.alertMessage);
-        break;
+//     case trapThree.tileNum:
+//         alert(trapThree.alertMessage);
+//         break;
 
-    case trapFour.tileNum:
-        alert(trapFour.alertMessage);
-        break;
+//     case trapFour.tileNum:
+//         alert(trapFour.alertMessage);
+//         break;
 
-    case trapFive.tileNum:
-        alert(trapFive.alertMessage);
-        break;
+//     case trapFive.tileNum:
+//         alert(trapFive.alertMessage);
+//         break;
 
-    default:
-}
+//     default:
+// }
 
 
 

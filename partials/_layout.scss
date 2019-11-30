@@ -3,7 +3,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 1000px; 
+    height: 945px; 
 }
 
 /*Character Select*/
@@ -124,6 +124,16 @@ body{
 }
 
     /*Board game*/ 
+
+    /*Points for players*/
+
+    #playerOnePoints{
+        float: left; 
+    }
+
+    #playerOnePoints{
+        float: right; 
+    }
 
 /*Tiles- styling*/
 

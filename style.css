@@ -3,7 +3,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 1000px;
+  height: 945px;
 }
 
 /*Character Select*/
@@ -103,6 +103,15 @@ body {
 }
 
 /*Board game*/
+/*Points for players*/
+#playerOnePoints {
+  float: left;
+}
+
+#playerOnePoints {
+  float: right;
+}
+
 /*Tiles- styling*/
 .board-game {
   display: grid;
@@ -146,8 +155,37 @@ body {
   font-size: 1.4em;
 }
 
+h1 {
+  font-family: "got", serif;
+  color: #AEAEAF;
+}
+
+h2 {
+  font-family: "got", serif;
+  color: #AEAEAF;
+}
+
 p {
   color: white;
+  font-family: "got", serif;
+}
+
+.button_play {
+  text-align: center;
+}
+.button_play button {
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  border-radius: 15%;
+  border: 6px solid #4d4d4d;
+  font-size: 1.4em;
+  font-family: "got", serif;
+  background-color: #a3a3a3;
+}
+.button_play button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
