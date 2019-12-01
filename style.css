@@ -135,6 +135,26 @@ body {
   border-radius: 50px;
 }
 
+.tiles-5 {
+  background-color: red;
+}
+
+.tiles-13 {
+  background-color: red;
+}
+
+.tiles-17 {
+  background-color: red;
+}
+
+.tiles-24 {
+  background-color: red;
+}
+
+.tiles-29 {
+  background-color: red;
+}
+
 @font-face {
   font-family: got;
   src: url(Fonts/got.ttf);
