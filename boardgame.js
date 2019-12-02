@@ -17,58 +17,67 @@ const playerTwo = {
 };
 
 // Placing the players in tile 0.
-document.getElementById("tile_0").innerHTML += `<div id="token1"> <img src="${playerOne.playerImg}" width="60px" /></div>`
-document.getElementById("tile_0").innerHTML += `<div id="token2"> <img src="${playerTwo.playerImg}" width="60px" /></div>`
+document.getElementById("tile_0").innerHTML += `<div><img src="${playerOne.playerImg}" width="60px" /></div>`
+document.getElementById("tile_0").innerHTML += `<div><img src="${playerTwo.playerImg}" width="60px" /></div>`
 
 // Function that figures which player turn it is, and rolls dice and updates the player object
 // If player rolls 6, the player gets another turn
 // If not the tile is emptied and places the player into current tile
 // Then it changes the player turn with an if/else statement, 
 
-// let whichPlayer;
+// let currentPlayer;
 
 function boardFunction() {
 
-  let whichPlayer;
+  let currentPlayer;
+  let notCurrentPlayer;
 
   if (playerOne.isPlayerTurn === true) {
-    whichPlayer = playerOne;
+    currentPlayer = playerOne;
+    notCurrentPlayer = playerTwo;
   }
   else {
-    whichPlayer = playerTwo;
+    currentPlayer = playerTwo;
+    notCurrentPlayer = playerOne;
   }
 
   let diceRoll = (Math.floor(Math.random() * 6) + 1);
+  console.log("Diceroll: " + diceRoll)
 
-  if (diceRoll === 6) {
 
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML = "";
-    // document.getElementById('tile_' + whichPlayer.tile).innerHTML = `<div id="token1" </div>`;
-    // document.getElementById('tile_' + whichPlayer.tile).innerHTML = `<div id="token2" </div>`;
 
-    whichPlayer.tile += diceRoll;
-
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px"/>`;
+  if (diceRoll === 6) { // if diceroll = 6 , move 6 steps and add another roll, and then move again 
     window.alert("The Gods are with you. Continue your journey!");
-    console.log('The Gods are with you. Continue your journey!');
+    currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll)
+    // console.log('The Gods are with you. Continue your journey!');
     boardFunction();
   }
-  else {
-    // document.getElementById(playerOne.tile.toString()).appendChild(playerOne.playerImg); // WTF 
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML -= `<p>""</p><img src="${whichPlayer.playerImg}" width="60px"/>`;
-    whichPlayer.tile += diceRoll;
-    document.getElementById('tile_' + whichPlayer.tile).innerHTML += `<img src="${whichPlayer.playerImg}" width="60px"/>`;
-    if (whichPlayer === playerOne) {
-      playerOne.isPlayerTurn = false;
-      playerTwo.isPlayerTurn = true;
-    } else {
-      playerOne.isPlayerTurn = true;
-      playerTwo.isPlayerTurn = false;
+  else { // if not 6, move the number of steps 
+    if (currentPlayer.tile === notCurrentPlayer.tile) { // if both players are on the same tile do this:
+      document.getElementById('tile_' + notCurrentPlayer.tile).innerHTML = `<p> ${notCurrentPlayer.tile}</p>`;
+      currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll); // updates the current players tile NOT the other player
+      // console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile)
+      setPlayerImageInTile(currentPlayer); // updates pictures into the new tile 
+      setPlayerImageInTile(notCurrentPlayer); // not current player image remains in same tile
+    }
+
+    else { // if the players are NOT in the same tile 
+      currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll)
+      console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile)
+      setPlayerImageInTile(currentPlayer);
     }
   }
 
-  // Switch statement setting the traps. WTF
-  switch (whichPlayer.tile) {
+  if (currentPlayer === playerOne) {
+    playerOne.isPlayerTurn = false;
+    playerTwo.isPlayerTurn = true;
+  } else if (currentPlayer === playerTwo) {
+    playerOne.isPlayerTurn = true;
+    playerTwo.isPlayerTurn = false;
+  }
+
+  // Switch statement setting the traps. 
+  switch (currentPlayer.tile) {
     case trapOne.tileNum:
       trapOne.tileNum - trapOne.penalty;
       window.alert(trapOne.alertMessage);
@@ -97,18 +106,14 @@ function boardFunction() {
 
     default:
   }
-
-
-  // WTFF -->
-
-  // to set tile 30 to a winning tile using a for loop that iterates through the tiles. 
-  // let boardTile;
-
-  // for (i = 0; i < boardTile.length; i++) {
-  //   if (tile === 30) {
-  //     window.alert("Congratulations you won the Throne!")
-  //   }
-  // }
-
 }
 
+function setCurrenPlayerInTile(currentPlayer, diceRoll) {
+  document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+  currentPlayer.tile += diceRoll;
+  return currentPlayer.tile;
+}
+
+function setPlayerImageInTile(currentPlayer) {
+  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
+}
