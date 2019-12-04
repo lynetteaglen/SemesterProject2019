@@ -151,31 +151,20 @@ body{
         display: inline-block; 
         border: 5px solid #DDDDE0; 
         width: 70px;
-        height: 70px;
-        padding: 15px;
+        height: 70px;        padding: 15px;
     }
 
 .player-image{
     border-radius: 50px; 
 }
 
-.tiles-5{
+div[class*="tiles-"]{
+     border-top: 4px solid rgb(148, 148, 148);
+    border-bottom: 4px solid rgb(148, 148, 148);
+}
+
+.tiles-5, .tiles-13, .tiles-17, .tiles-24, .tiles-29{
     background-color: red; 
 }
 
-.tiles-13{
-    background-color: red; 
-}
-
-.tiles-17{
-    background-color: red; 
-}
-
-.tiles-24{
-    background-color: red; 
-}
-
-.tiles-29{
-    background-color: red; 
-}
 

@@ -1,4 +1,3 @@
-
 // placing the players in tile 0.
 document.getElementById("tile_0").innerHTML += `<div><img src="${playerOne.playerImg}" width="60px" /></div>`
 document.getElementById("tile_0").innerHTML += `<div><img src="${playerTwo.playerImg}" width="60px" /></div>`
@@ -43,42 +42,50 @@ function boardFunction() {
       console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile)
       setPlayerImageInTile(currentPlayer);
     }
+
   }
 
   // switch statement setting the traps. 
   switch (currentPlayer.tile) {
+
     case trapOne.tileNum:
       alert(trapOne.alertMessage);
-      currentPlayer.tile -= trapOne.penalty;
-      document.getElementById('tile_' + currentPlayer.tileNum), innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+      currentPlayer.tile = currentPlayer.tile - trapOne.penalty;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`; s
       break;
 
     case trapTwo.tileNum:
       alert(trapTwo.alertMessage);
-      currentPlayer.tile -= trapTwo.penalty;
-      document.getElementById('tile_' + currentPlayer.tileNum), innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+      currentPlayer.tile = currentPlayer.tile - trapTwo.penalty;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapThree.tileNum:
       alert(trapThree.alertMessage);
-      currentPlayer.tile -= trapThree.penalty;
-      document.getElementById('tile_' + currentPlayer.tileNum), innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+      currentPlayer.tile = currentPlayer.tile - trapThree.penalty;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapFour.tileNum:
       alert(trapFour.alertMessage);
-      currentPlayer.tile -= trapFour.penalty;
-      document.getElementById('tile_' + currentPlayer.tileNum), innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+      currentPlayer.tile = currentPlayer.tile - trapFour.penalty;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapFive.tileNum:
       alert(trapFive.alertMessage);
-      currentPlayer.tile -= trapFive.penalty;
-      document.getElementById('tile_' + currentPlayer.tileNum), innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
+      currentPlayer.tile = currentPlayer.tile - trapFive.penalty;
+      document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     default:
   }
+
 
   // figures out which player turn it is. 
   if (currentPlayer === playerOne) {
@@ -100,12 +107,10 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
 
 // places the image in the tile. 
 function setPlayerImageInTile(currentPlayer) {
-  // if
+  // winning the game
   try {
     document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
-  }
-  catch{
+  } catch {
     alert("Congratulations!" + currentPlayer + "won the Throne")
   }
-
 }
