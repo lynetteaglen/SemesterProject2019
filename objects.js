@@ -1,3 +1,22 @@
+
+// Player objects + attributes and values. 
+const playerOne = {
+    tile: 0,
+    id: 1,
+    PlayerName: sessionStorage.getItem("player1"),
+    isPlayerTurn: true,
+    playerImg: `/Images/${sessionStorage.getItem("player1")}.svg`,
+};
+
+const playerTwo = {
+    tile: 0,
+    id: 2,
+    PlayerName: sessionStorage.getItem("player2"),
+    isPlayerTurn: false,
+    playerImg: `/Images/${sessionStorage.getItem("player2")}.svg`,
+};
+
+
 // switch
 
 const trapOne = {
@@ -30,30 +49,6 @@ const trapFive = {
     alertMessage: "The throne is so close you got so excited and"
 }
 
-
-// switch (whichPlayer.tile) {
-//     case trapOne.tileNum:
-//         alert(trapOne.alertMessage);
-//         break;
-
-//     case trapTwo.tileNum:
-//         alert(trapTwo.alertMessage);
-//         break;
-
-//     case trapThree.tileNum:
-//         alert(trapThree.alertMessage);
-//         break;
-
-//     case trapFour.tileNum:
-//         alert(trapFour.alertMessage);
-//         break;
-
-//     case trapFive.tileNum:
-//         alert(trapFive.alertMessage);
-//         break;
-
-//     default:
-// }
 
 
 
