@@ -58,6 +58,9 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+.cards .cardSelected {
+  box-shadow: 10px 10px 5px rgba(255, 255, 255, 0.5);
+}
 .cards .cards-1 {
   grid-column: 3/4;
   grid-row: 1;

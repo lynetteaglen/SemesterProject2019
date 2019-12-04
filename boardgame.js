@@ -17,7 +17,6 @@ function boardFunction() {
     currentPlayer = playerTwo;
     notCurrentPlayer = playerOne;
   }
-
   // rolls dice. 1 to 6
   let diceRoll = (Math.floor(Math.random() * 6) + 1);
   console.log("Diceroll: " + diceRoll)
