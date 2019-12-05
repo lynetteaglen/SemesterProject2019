@@ -8,30 +8,81 @@
 .header{
     font-family: 'got', serif; 
     color: #AEAEAF; 
-    font-size: 2.4em; 
-    text-align: center;
-    margin-left: 44%; 
-    margin-right: 44%;      
+    font-size: 2.5em; 
+    text-align: center;  
+    margin-top: 4%; 
+    margin-bottom: 3%; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(197, 197, 197), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
 }
 
-.character-cards-name{
+
+// Button in cards 
+
+.character-card-button{
     font-family: 'got', serif; 
     color: #AEAEAF; 
     text-align: center;
     font-size: 1.4em; 
+    background-color:  #202020;
+    padding: 5%; 
+    background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+    -webkit-background-clip: text; 
+    color: transparent; 
+
 }
+
+button:hover{
+    box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+    cursor: pointer;
+}
+
+// Play game button 
+.playGame{
+    text-align: center;
+    margin-top: 2%; 
+
+}
+    .playGame_button{
+    font-family: 'got', serif; 
+    color: #AEAEAF; 
+    text-align: center;
+    font-size: 1em; 
+    background-color:  #000000;
+    padding: 1%;
+    padding-left: 5%; 
+    padding-right:5%; 
+    background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+    -webkit-background-clip: text; 
+    color: transparent; 
+    }
+
+    .playGame_button:hover{
+        box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+        cursor: pointer;
+        background-color:  #000000;
+    }
+
+
 
 h1{
     font-family: 'got', serif; 
-    color: #AEAEAF; 
+    background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+    -webkit-background-clip: text; 
+    color: transparent; 
 }
 
 h2{
     font-family: 'got', serif; 
-    color: #AEAEAF; 
+    background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+    -webkit-background-clip: text; 
+    color: transparent; 
 }
 
 p{
-    color: white; 
+    background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+    -webkit-background-clip: text; 
+    color: transparent; 
     font-family: 'got', serif;    
 }

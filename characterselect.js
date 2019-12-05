@@ -18,10 +18,10 @@ function showPopUp(result, id) {
   let thisName = result.name.replace(/ /g, ''); // making a variable to get the name of character. 
   document.getElementById("popupContent").innerHTML =
     `<div class="[ characters ]">
+    <span class="closeBtn" onclick="hidePopUp()">&times;</span>
       <p>${result.titles}</p>
       <p>${result.name}</p>
       </div>
-      <span onclick="hidePopUp()">&times;</span>
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage(${id})">Select Player</button> 
     `; // getting an attribute. the name who is saved here is for example Arya Stark
 }

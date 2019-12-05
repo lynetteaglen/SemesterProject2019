@@ -11,6 +11,12 @@
 
 <body>
 
+  <div class="fullscreen-background">
+    <video loop muted autoplay>
+      <source src="Videos/fog.mp4">
+    </video>
+  </div>
+
   <h1 class="[ header ]">Game of Gnomes</h1>
 
   <main>
@@ -26,67 +32,60 @@
 
       <div id="character-card-148" class="[ cards-border cards-1 ]">
         <img class="[ cards__image ]" src="./Images/AryaStark.svg" />
-        <h1 class="[ character-cards-name ]">Arya Stark</h1>
-        <button id="myBtn" onclick="getInfo(148)">Select</button>
+        <button id="myBtn" class="character-card-button" onclick="getInfo(148)">Arya Stark</button>
       </div>
 
       <div id="character-card-27" class="[ cards-border cards-2 ]">
-        <img class="[ cards__image ]" src="Images/lannister.svg" />
-        <button id="myBtn" onclick="getInfo(27)">Tywin Lannister</button>
+        <img class="[ cards__image ]" src="Images/TywinLannister.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(27)">Tywin Lannister</button>
       </div>
 
       <div id="character-card-901" class="[ cards-border cards-3 ]">
-        <img class="[ cards__image ]" src="Images/baratheon.svg" />
-        <h1 class="[ character-cards-name ]">Robert Baratheon</h1>
-        <button id="myBtn" onclick="getInfo(901)">Select</button>
+        <img class="[ cards__image ]" src="Images/RobertIBaratheon.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(901)">Robert Baratheon</button>
       </div>
 
       <div id="character-card-271" class="[ cards-border cards-4 ]">
         <img class="[ cards__image ]" src="Images/DaenerysTargaryen.svg" />
-        <h1 class="[ character-cards-name ]">Daenerys Targaryen</h1>
-        <button id="myBtn" onclick="getInfo(271)">Select</button>
+        <button id="myBtn" class="character-card-button" onclick="getInfo(271)">Daenerys Targaryen</button>
       </div>
 
       <div id="character-card-346" class="[ cards-border cards-5 ]">
-        <img class="[ cards__image ]" src="Images/tully.svg" />
-        <h1 class="[ character-cards-name ]">Edmure Tully</h1>
-        <button id="myBtn" onclick="getInfo(346)">Select</button>
+        <img class="[ cards__image ]" src="Images/EdmureTully.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(346)">Edmure Tully</button>
       </div>
 
       <div id="character-card-894" class="[ cards-border cards-6 ]">
-        <img class="[ cards__image ]" src="Images/arryn.svg" />
-        <h1 class="[ character-cards-name ]">Robert Arryn</h1>
-        <button id="myBtn" onclick="getInfo(894)">Select</button>
+        <img class="[ cards__image ]" src="Images/RobertArryn.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(894)">Robert Arryn</button>
       </div>
 
       <div id="character-card-1022" class="[ cards-border cards-7 ]">
-        <img class="[ cards__image ]" src="Images/greyjoy.svg" />
-        <h1 class="[ character-cards-name ]">Theon Greyjoy</h1>
-        <button id="myBtn" onclick="getInfo(1022)">Select</button>
+        <img class="[ cards__image ]" src="Images/TheonGreyjoy.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(1022)">Theon Greyjoy</button>
       </div>
 
       <div id="character-card-16" class="[ cards-border cards-8 ]">
-        <img class="[ cards__image ]" src="Images/tyrell.svg" />
-        <h1 class=" [ character-cards-name ]">Margaery Tyrell</h1>
-        <button id="myBtn" onclick="getInfo(16)">Select</button>
+        <img class="[ cards__image ]" src="Images/MargaeryTyrell.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(16)">Margaery Tyrell</button>
       </div>
 
       <div id="character-card-216" class="[ cards-border cards-9 ]">
-        <img class="[ cards__image ]" src="Images/tarth.svg" />
-        <h1 class="[ character-cards-name ]">Brienne of Tarth</h1>
-        <button id="myBtn" onclick="getInfo(216)">Select</button>
+        <img class="[ cards__image ]" src="Images/BrienneofTarth.svg" />
+        <button id="myBtn" class="character-card-button" onclick="getInfo(216)">Brienne Tarth</button>
       </div>
 
       <div id="character-card-1560" class="[ cards-border cards-10 ]">
         <img class="[ cards__image ]" src="Images/" />
-        <h1 class="[ character-cards-name ]">Jorah Mormont</h1>
-        <button id="myBtn" onclick="getInfo(1560)">Select</button>
+        <button id="myBtn" class="character-card-button" onclick="getInfo(1560)">Jorah Mormont</button>
       </div>
 
 
     </div>
 
-    <a href="/boardgame.html"><button id="selectBtn" onclick="getPlayerImage()">Play Game!</button></a>
+    <div class="playGame">
+      <a href="/boardgame.html"><button class="playGame_button">Play Game</button></a>
+    </div>
 
 
   </main>

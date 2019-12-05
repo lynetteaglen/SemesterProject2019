@@ -32,7 +32,7 @@ const trapTwo = {
 }
 
 const trapThree = {
-    tileNum: 17,
+    tileNum: 19,
     penalty: 5,
     alertMessage: "The dragons of Targaryen fired up the forrest. Go back 5 tiles"
 }
