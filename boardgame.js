@@ -106,12 +106,12 @@ function boardFunction() {
 
   // figures out which player turn it is. 
   if (currentPlayer === playerOne) {
-    document.getElementById("playerOnePoints").innerHTML = `<h2>Player 2 <h2/> <p></p>`
+    document.getElementById("playerOnePoints").innerHTML = `<h2>Player 1 <h2/> <p></p>`
     document.getElementById("playerOnePoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>`
     playerOne.isPlayerTurn = false;
     playerTwo.isPlayerTurn = true;
   } else if (currentPlayer === playerTwo) {
-    document.getElementById("playerTwoPoints").innerHTML = `<h2>Player 1 <h2/> <p></p>`
+    document.getElementById("playerTwoPoints").innerHTML = `<h2>Player 2 <h2/> <p></p>`
     document.getElementById("playerTwoPoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>`
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
@@ -129,18 +129,18 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
     return currentPlayer.tile;
   }
   catch {
-    currentPlayer.wonGame = true;
-    window.open("final.html");
+    if (currentPlayer === playerOne) {
+      playerOne.wonGame = true;
+      window.open("final.html");
+    }
+    else {
+      playerTwo.wonGame = true;
+      window.open("final.html");
+    }
   }
 }
 
 // places the image in the tile. 
 function setPlayerImageInTile(currentPlayer) {
-  // winning the game
-  try {
-    document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
-  } catch {
-    currentPlayer.wonGame = true;
-    window.open("final.html");
-  }
+  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
 }
