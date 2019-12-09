@@ -17,6 +17,12 @@
     height: 100%;
 }
 
+audio{
+    margin: 0;
+    margin-bottom: -3%; 
+    padding: 0; 
+}
+
 /*Character Select*/
 
 .cards{
@@ -57,11 +63,14 @@
     margin-top: 10%;
     padding-top: 5%;
     padding-bottom: 5%;
-    padding-left: 1%;
-    padding-right: 1%; 
     border: 1px solid black;
     width: 80%;
     align-content: center;
+  }
+
+  .popup-text{
+      margin-left: 25%; 
+      margin-right: 25%; 
   }
 
 
@@ -186,13 +195,26 @@
         border: 5px solid #DDDDE0; 
         width: 70px;
         height: 70px;       
-        padding: 15px;
+        padding: 20px;
         background-color: black; 
+
+        p{
+            font-family: serif;
+            margin: 0; 
+            padding: 0; 
+        }
     }
 
-.player-image{
-    border-radius: 50px; 
-}
+
+    .tile_player1{
+        float: right; 
+        z-index: 10 !important;  
+    }
+
+    .tile_player2{
+        float: left;
+        z-index: 10 !important; 
+    }
 
 div[class*="tiles-"]{
      border-top: 4px solid rgb(148, 148, 148);
@@ -200,7 +222,7 @@ div[class*="tiles-"]{
 }
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29{
-    background-color: red; 
+    background-color: rgb(85, 0, 0); 
 }
 
 

@@ -19,8 +19,10 @@ function showPopUp(result, id) {
   document.getElementById("popupContent").innerHTML =
     `<div class="[ characters ]">
     <span class="closeBtn" onclick="hidePopUp()">&times;</span>
-      <p>${result.titles}</p>
-      <p>${result.name}</p>
+      <h1>Title</h1>
+      <p class="popup-text">${result.titles}</p>
+      <h1>Name</h1>
+      <p class="popup-text">${result.name}</p>
       </div>
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage(${id})">Select Player</button> 
     `; // getting an attribute. the name who is saved here is for example Arya Stark
@@ -45,7 +47,7 @@ function saveStorage(id) {
   popup.style.display = "none";
 
 
-  // when card is selected it gets the id from the HTML together with the
+  // when card is selected it gets the id
   function selectCards() {
 
     let selectedCard = document.querySelector("#character-card-" + id);
