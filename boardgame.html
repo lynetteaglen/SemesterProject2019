@@ -11,20 +11,22 @@
 
 <body>
 
-  <div class="fullscreen-background">
+  <div class="[ fullscreen-background ]">
     <video loop muted autoplay>
       <source src="Videos/fog.mp4">
     </video>
   </div>
 
+
+  <h1 class="[ header ]">Game of Gnomes</h1>
+
   <main>
 
-    <div id="popupDiceRollSix" class="popup">
+    <!--Popup-->
+    <div id="popupDiceRollSix" class="[ gamePopup ]">
       <div id="popupContent" class="[ popup-content ]">
       </div>
     </div>
-
-    <h1 class="[ header ]">Game of Gnomes</h1>
 
     <!--Player points-->
     <div id="playerOnePoints">
@@ -34,6 +36,8 @@
       <h2>Player 2</h2>
     </div>
 
+
+    <!--Board-->
     <div class="[ board-game ]">
 
       <div id="tile_21" class="[ tiles-21 board ]">
@@ -136,9 +140,10 @@
     </div>
     <!--Felles klasser som styler greiene. -->
 
-    <div class="button_play">
+    <div class="[ button_play ]">
       <button onclick="boardFunction()">Roll Dice</button>
     </div>
+
   </main>
   <script src="objects.js"></script>
   <script src="boardgame.js"></script>

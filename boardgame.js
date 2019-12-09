@@ -66,35 +66,65 @@ function boardFunction() {
   switch (currentPlayer.tile) {
 
     case trapOne.tileNum:
-      alert(trapOne.alertMessage);
+      showPopUp(popup);
+      document.getElementById("popupContent").innerHTML =
+        `<div class="[ characters ]">
+          <p>${trapOne.alertMessage}</p>
+          </div>
+          <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+          `;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
       currentPlayer.tile = currentPlayer.tile - trapOne.penalty;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapTwo.tileNum:
-      alert(trapTwo.alertMessage);
+      showPopUp(popup);
+      document.getElementById("popupContent").innerHTML =
+        `<div class="[ characters ]">
+          <p>${trapTwo.alertMessage}</p>
+          </div>
+          <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+          `;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
       currentPlayer.tile = currentPlayer.tile - trapTwo.penalty;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapThree.tileNum:
-      alert(trapThree.alertMessage);
+      showPopUp(popup);
+      document.getElementById("popupContent").innerHTML =
+        `<div class="[ characters ]">
+          <p>${trapThree.alertMessage}</p>
+          </div>
+          <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+          `;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
       currentPlayer.tile = currentPlayer.tile - trapThree.penalty;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapFour.tileNum:
-      alert(trapFour.alertMessage);
+      showPopUp(popup);
+      document.getElementById("popupContent").innerHTML =
+        `<div class="[ characters ]">
+          <p>${trapFour.alertMessage}</p>
+          </div>
+          <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+          `;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
       currentPlayer.tile = currentPlayer.tile - trapFour.penalty;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
       break;
 
     case trapFive.tileNum:
-      alert(trapFive.alertMessage);
+      showPopUp(popup);
+      document.getElementById("popupContent").innerHTML =
+        `<div class="[ characters ]">
+          <p>${trapFive.alertMessage}</p>
+          </div>
+          <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+          `;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p> ${currentPlayer.tile}</p>`;
       currentPlayer.tile = currentPlayer.tile - trapFive.penalty;
       document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<img src="${currentPlayer.playerImg}" width="60px"/>`;
@@ -131,10 +161,12 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
   catch {
     if (currentPlayer === playerOne) {
       playerOne.wonGame = true;
+      playerTwo.wonGame = false;
       window.open("final.html");
     }
     else {
       playerTwo.wonGame = true;
+      playerOne.wonGame = false;
       window.open("final.html");
     }
   }
@@ -144,3 +176,5 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
 function setPlayerImageInTile(currentPlayer) {
   document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
 }
+
+
