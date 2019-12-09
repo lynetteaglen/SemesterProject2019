@@ -2,6 +2,17 @@
 document.getElementById("tile_0").innerHTML += `<img class="tile_player1" src="${playerOne.playerImg}" width="50%" />`
 document.getElementById("tile_0").innerHTML += `<img class="tile_player2" src="${playerTwo.playerImg}" width="50%" />`
 
+// Popups 
+let popup = document.getElementById("popupDiceRollSix");
+
+// Hides the popup modal 
+function hidePopUp(popup) {
+  popup.style.display = "none";
+}
+
+function showPopUp(popup) {
+  popup.style.display = "block";
+}
 
 // function contains the happenings of the game
 function boardFunction() {
@@ -23,20 +34,16 @@ function boardFunction() {
   console.log("Diceroll: " + diceRoll)
 
 
-  if (diceRoll === 6) { // if diceroll = 6 , move 6 steps and add another roll, and then move again 
-    showPopUp();
+  if (diceRoll === 6) { // if diceroll = 6 , move 6 steps and add another roll --> popup, and then move again 
+    showPopUp(popup);
     document.getElementById("popupContent").innerHTML =
       `<div class="[ characters ]">
-      <span class="closeBtn" onclick="hidePopUp()">&times;</span>
       <h2>You rolled a 6</h2>
       <p>The Gods are with you. Continue your journey!</p>
-      <button id="rolled" onclick="hidePopUp">Continue</button> 
       </div>
-    `;
-    // Shows the popup
-
+      <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
+      `;
     currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll)
-    // console.log('The Gods are with you. Continue your journey!');
     boardFunction();
   }
   else { // if not 6, move the number of steps the dice has
@@ -99,9 +106,13 @@ function boardFunction() {
 
   // figures out which player turn it is. 
   if (currentPlayer === playerOne) {
+    document.getElementById("playerOnePoints").innerHTML = `<h2>Player 2 <h2/> <p></p>`
+    document.getElementById("playerOnePoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>`
     playerOne.isPlayerTurn = false;
     playerTwo.isPlayerTurn = true;
   } else if (currentPlayer === playerTwo) {
+    document.getElementById("playerTwoPoints").innerHTML = `<h2>Player 1 <h2/> <p></p>`
+    document.getElementById("playerTwoPoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>`
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
   }
@@ -110,29 +121,17 @@ function boardFunction() {
 
 
 
-
-
-// Popups 
-let popup = document.getElementById("myPopup");
-let closeButton = document.getElementsByClassName("closeBtn")[0];
-
-// Hides the popup modal 
-function hidePopUp() {
-  popup.style.display = "none";
-}
-
-function showPopUp(popup) {
-  popup.style.display = "block";
-}
-
-
-
-
 // function that places the current player in tile 
 function setCurrenPlayerInTile(currentPlayer, diceRoll) {
-  document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p>${currentPlayer.tile}</p>`;
-  currentPlayer.tile += diceRoll;
-  return currentPlayer.tile;
+  try {
+    document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p>${currentPlayer.tile}</p>`;
+    currentPlayer.tile += diceRoll;
+    return currentPlayer.tile;
+  }
+  catch {
+    currentPlayer.wonGame = true;
+    window.open("final.html");
+  }
 }
 
 // places the image in the tile. 
@@ -141,6 +140,7 @@ function setPlayerImageInTile(currentPlayer) {
   try {
     document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
   } catch {
-    alert("Congratulations! You won the Throne")
+    currentPlayer.wonGame = true;
+    window.open("final.html");
   }
 }

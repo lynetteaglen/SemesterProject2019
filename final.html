@@ -1,10 +1,37 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title></title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css">
+  <title>Game of Gnomes</title>
+</head>
+
+<body>
+  <audio controls="volume">
+    <!--Artist: Ross Bugden
+            Title: Ice and fire-->
+    <source src="Song /A Song of Ice and Fire.wav" type="audio/wav">"
+  </audio>
+
+  <div class="fullscreen-background">
+    <video loop muted autoplay>
+      <source src="Videos/fog.mp4">
+    </video>
+  </div>
+
+  <h1 class="[ header ]">Game of Gnomes</h1>
+  <main>
+
+    <h1>When you play the game of thrones, you win or you die. There is no middle ground.</h1>
+
+    <div id="finalWinner"></div>
+
+
+  </main>
+  <script src="objects.js"></script>
+  <script src="final.js"></script>
+</body>
+
 </html>

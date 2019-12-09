@@ -5,6 +5,7 @@ const playerOne = {
     id: 1,
     PlayerName: sessionStorage.getItem("player1"),
     isPlayerTurn: true,
+    wonGame: false,
     playerImg: `/Images/${sessionStorage.getItem("player1")}.svg`,
 };
 
@@ -13,9 +14,9 @@ const playerTwo = {
     id: 2,
     PlayerName: sessionStorage.getItem("player2"),
     isPlayerTurn: false,
+    wonGame: false,
     playerImg: `/Images/${sessionStorage.getItem("player2")}.svg`,
 };
-
 
 // switch
 
