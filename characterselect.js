@@ -28,12 +28,13 @@ function showPopUp(result, id) {
     `; // getting an attribute. the name who is saved here is for example Arya Stark
 }
 
-let player = false;
 
+
+let player = false;
 // Saving the value of the cards into session storage
 // Making two players that is set to false. When selected it turns into true
 // if the character is selected then it changes player two to true. 
-function saveStorage(id) {
+function saveStorage(id) { // Saving the value of the cards into session storage
   let btn = document.getElementById("selectBtn");
   let charName = btn.getAttribute("data-character");
   let name = ["player1", "player2"];
@@ -49,19 +50,13 @@ function saveStorage(id) {
 
   // when card is selected it gets the id
   function selectCards() {
-
     let selectedCard = document.querySelector("#character-card-" + id);
-
     selectedCard.classList.add('cardSelected');
   }
-
   //selectedCard.classList.remove('cardSelected');
-
   selectCards();
 
 }
-
-
 
 //Fetching the API
 function getInfo(id) {

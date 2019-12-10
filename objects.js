@@ -6,7 +6,7 @@ const playerOne = {
     PlayerName: sessionStorage.getItem("player1"),
     isPlayerTurn: true,
     wonGame: false,
-    playerImg: `/Images/${sessionStorage.getItem("player1")}.svg`,
+    playerImg: "/Images/" + sessionStorage.getItem("player1") + ".svg",
 };
 
 const playerTwo = {
@@ -15,7 +15,7 @@ const playerTwo = {
     PlayerName: sessionStorage.getItem("player2"),
     isPlayerTurn: false,
     wonGame: false,
-    playerImg: `/Images/${sessionStorage.getItem("player2")}.svg`,
+    playerImg: "/Images/" + sessionStorage.getItem("player2") + ".svg",
 };
 
 // switch
@@ -29,7 +29,7 @@ const trapOne = {
 const trapTwo = {
     tileNum: 13,
     penalty: 5,
-    alertMessage: "You got unlucky and stepped on a neelde. Go back 5 tiles"
+    alertMessage: "You got stabbed. Go back 5 tiles"
 }
 
 const trapThree = {
