@@ -173,13 +173,28 @@ audio {
   margin-right: 25%;
 }
 
+/*button popup*/
+#rolled {
+  font-family: "got", serif;
+  color: #AEAEAF;
+  text-align: center;
+  font-size: 1em;
+  background-color: #202020;
+  padding: 1%;
+  background: linear-gradient(#3a3a3a, #c5c5c5, #3a3a3a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 /*Points for players*/
 #playerOnePoints {
   float: left;
+  margin-left: 5%;
 }
 
 #playerTwoPoints {
   float: right;
+  margin-right: 5%;
 }
 
 /*Tiles- styling*/
@@ -224,6 +239,13 @@ div[class*=tiles-] {
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29 {
   background-color: #550000;
+}
+
+#dice {
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
 }
 
 @font-face {

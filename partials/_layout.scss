@@ -204,17 +204,36 @@ audio{
           margin-right: 25%; 
       }
     
+      /*button popup*/ 
+
+      #rolled{
+        font-family: 'got', serif; 
+        color: #AEAEAF; 
+        text-align: center;
+        font-size: 1em; 
+        background-color:  #202020;
+        padding: 1%; 
+        background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+        -webkit-background-clip: text; 
+        color: transparent; 
+      }
 
     /*Points for players*/
 
     #playerOnePoints{
         float: left; 
+        margin-left: 5%; 
     }
 
     #playerTwoPoints{
         float: right; 
+        margin-right: 5%; 
     }
 
+
+    .header-top{
+       
+    }
 /*Tiles- styling*/
 
 .board-game{
@@ -263,3 +282,9 @@ div[class*="tiles-"]{
 }
 
 
+#dice{
+    text-align: center;
+    font-size: 2em;
+    margin: 0; 
+    padding: 0; 
+}

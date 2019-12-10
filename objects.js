@@ -29,7 +29,7 @@ const trapOne = {
 const trapTwo = {
     tileNum: 13,
     penalty: 5,
-    alertMessage: "You got stabbed. Go back 5 tiles"
+    alertMessage: "A midget stabbed your leg. Go back 5 tiles"
 }
 
 const trapThree = {
@@ -47,7 +47,7 @@ const trapFour = {
 const trapFive = {
     tileNum: 29,
     penalty: 26,
-    alertMessage: "When you play a game of thrones you win or you die. Go back till tile number 3"
+    alertMessage: "You got paralyzed. Go back till tile number 3"
 }
 
 
