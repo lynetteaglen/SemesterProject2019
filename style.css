@@ -42,6 +42,18 @@ body {
   color: transparent;
 }
 
+.header-finalpage {
+  font-family: "got", serif;
+  color: #AEAEAF;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 1%;
+  background: linear-gradient(#616161, #dfdfdf, #616161);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
 h2 {
   font-family: "got", serif;
   background: linear-gradient(#616161, #dfdfdf, #616161);
@@ -56,13 +68,14 @@ p {
   color: transparent;
 }
 
+a {
+  color: lightblue;
+}
+
 .speaker {
   font-family: "got", serif;
-  color: #AEAEAF;
   font-size: 1em;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-left: 1%;
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
   color: transparent;
@@ -117,8 +130,18 @@ button:hover {
 }
 
 /*Points for players*/
+.playerContainer1 {
+  margin-top: -4%;
+}
+
+.playerContainer2 {
+  float: right;
+  margin-top: -2%;
+}
+
 #playerOneName {
-  float: left;
+  display: block;
+  margin-left: 1%;
   font-family: "got", serif;
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
@@ -126,7 +149,7 @@ button:hover {
 }
 
 #playerTwoName {
-  float: right;
+  display: block;
   font-family: "got", serif;
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
@@ -135,7 +158,7 @@ button:hover {
 
 #playerOnePoints {
   float: left;
-  margin-left: 0;
+  margin-left: 1%;
   font-family: "got", serif;
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
@@ -146,8 +169,8 @@ button:hover {
 }
 
 #playerTwoPoints {
-  margin-right: 0;
   float: right;
+  margin-right: 1%;
   font-family: "got", serif;
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
@@ -155,6 +178,16 @@ button:hover {
 }
 #playerTwoPoints p {
   margin-right: 0;
+}
+
+.winner-text {
+  text-align: center;
+  margin-bottom: 15%;
+}
+
+.footer-text {
+  color: white;
+  font-family: sans-serif;
 }
 
 .button_play {
@@ -226,14 +259,16 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(10, 10%);
   row-gap: 5%;
-  margin-left: 15%;
+  column-gap: 0.5%;
+  margin-left: 12%;
   margin-right: 15%;
   padding-top: 3%;
   padding-bottom: 5.5%;
+  margin-top: 3%;
 }
 
 .board {
-  margin-top: 10%;
+  margin-top: 5%;
   display: inline-block;
   border: 5px solid #818181;
   width: 70px;
@@ -245,6 +280,7 @@ button:hover {
   font-family: serif;
   margin: 0;
   padding: 0;
+  color: #272727;
 }
 
 .tile_player1 {
@@ -263,7 +299,7 @@ div[class*=tiles-] {
 }
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29 {
-  background-color: #464646;
+  background-color: #6d6d6d;
 }
 
 .tiles-30 {
@@ -328,7 +364,8 @@ div[class*=tiles-] {
   margin-right: 25%;
   background: none;
   color: #dfdfdf;
-  font-family: sans-serif;
+  font-family: "got", serif;
+  line-height: 2em;
 }
 .cards #selectBtn {
   font-family: "got", serif;
@@ -337,6 +374,7 @@ div[class*=tiles-] {
   font-size: 1em;
   background-color: #202020;
   padding: 1%;
+  margin-top: 3%;
   background: linear-gradient(#3a3a3a, #c5c5c5, #3a3a3a);
   -webkit-background-clip: text;
   color: transparent;
@@ -404,6 +442,20 @@ div[class*=tiles-] {
 }
 .cards .cards__image {
   width: 100%;
+}
+
+.tile_player1 {
+  float: none;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+footer {
+  background-color: black;
+  bottom: 0;
+  padding: 3%;
 }
 
 /*# sourceMappingURL=style.css.map */

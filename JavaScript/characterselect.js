@@ -18,9 +18,9 @@ function showPopUp(result, id) {
   document.getElementById("popupContent").innerHTML =
     `<div class="[ characters ]">
     <span class="closeBtn" onclick="hidePopUp()">&times;</span>
-      <h1>Title</h1>
+      <h2>Title</h2>
       <p class="popup-text">${result.titles}</p>
-      <h1>Name</h1>
+      <h2>Name</h2>
       <p class="popup-text">${result.name}</p>
       </div>
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage(${id})">Select Player</button> 

@@ -48,7 +48,8 @@
       margin-right: 25%; 
       background: none; 
       color: rgb(223, 223, 223);  
-      font-family: sans-serif; 
+      font-family: 'got', serif; 
+      line-height: 2em;
   }
 
 
@@ -59,6 +60,7 @@
     font-size: 1em; 
     background-color:  #202020;
     padding: 1%; 
+    margin-top: 3%; 
     background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
     -webkit-background-clip: text; 
     color: transparent; 
