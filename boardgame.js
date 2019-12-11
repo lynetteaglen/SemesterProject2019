@@ -37,6 +37,7 @@ function boardFunction() {
   let diceRoll = (Math.floor(Math.random() * 6) + 1);
   document.getElementById("dice").innerHTML = `<p></p>`
   document.getElementById("dice").innerHTML += `<p>${diceRoll}</p>`
+  console.log(currentPlayer.PlayerName);
   // console.log("Diceroll: " + diceRoll)
 
 
@@ -169,19 +170,19 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
     return currentPlayer.tile;
   }
   catch {
-    if (currentPlayer === playerOne) {  // set the player to won  -->
-      playerOne.wonGame = true;
-      playerTwo.wonGame = false;
-      sessionStorage.setItem("winnerName", playerOne.PlayerName);  // then store the player in session storage
-      sessionStorage.setItem("winnerImage", playerOne.playerImg);
-      window.open("final.html");
-    }
-    else {
-      playerTwo.wonGame = true;
-      playerOne.wonGame = false;
-      sessionStorage.setItem("winnerName", playerTwo.PlayerName);
-      sessionStorage.setItem("winnerImage", playerTwo.playerImg);
-      window.open("final.html");
+    if (currentPlayer.tile >= 30 || currentPlayer.tile === undefined) {
+      if (currentPlayer === playerOne) {  // set the player to won  -->
+        sessionStorage.setItem("winnerPlayer", "playerOne");
+        sessionStorage.setItem("winnerName", playerOne.PlayerName);  // then store the player in session storage
+        sessionStorage.setItem("winnerImage", playerOne.playerImg);
+        window.open("final.html");
+      }
+      else {
+        sessionStorage.setItem("winnerPlayer", "playerTwo");
+        sessionStorage.setItem("winnerName", playerTwo.PlayerName);
+        sessionStorage.setItem("winnerImage", playerTwo.playerImg);
+        window.open("final.html");
+      }
     }
   }
 }
@@ -189,7 +190,25 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
 
 // places the image in the tile. 
 function setPlayerImageInTile(currentPlayer) {
-  document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
+  try {
+    document.getElementById('tile_' + currentPlayer.tile).innerHTML += `<div><img src="${currentPlayer.playerImg}" width="60px"/></div>`;
+  }
+  catch {
+    if (currentPlayer.tile >= 30 || currentPlayer.tile === undefined) {
+      if (currentPlayer === playerOne) {  // set the player to won  -->
+        sessionStorage.setItem("winnerPlayer", "playerOne");
+        sessionStorage.setItem("winnerName", playerOne.PlayerName);  // then store the player in session storage
+        sessionStorage.setItem("winnerImage", playerOne.playerImg);
+        window.open("final.html");
+      }
+      else {
+        sessionStorage.setItem("winnerPlayer", "playerTwo");
+        sessionStorage.setItem("winnerName", playerTwo.PlayerName);
+        sessionStorage.setItem("winnerImage", playerTwo.playerImg);
+        window.open("final.html");
+      }
+    }
+  }
 }
 
 
