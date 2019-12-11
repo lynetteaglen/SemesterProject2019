@@ -14,7 +14,6 @@ function showPopUp(popup) {
   popup.style.display = "block";
 }
 
-
 // Board game function
 function boardFunction() {
 
@@ -32,15 +31,12 @@ function boardFunction() {
     notCurrentPlayer = playerOne;
   }
 
-
   // Rolls dice from 1-6 and then displayes it into html. 
   let diceRoll = (Math.floor(Math.random() * 6) + 1);
   document.getElementById("dice").innerHTML = `<p></p>`
   document.getElementById("dice").innerHTML += `<p>${diceRoll}</p>`
   console.log(currentPlayer.PlayerName);
   // console.log("Diceroll: " + diceRoll)
-
-
 
   if (diceRoll === 6) { // if dice equals to 6 -->
     showPopUp(popup);  // show this popup
@@ -51,8 +47,13 @@ function boardFunction() {
       </div>
       <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
       `;
+    if (currentPlayer.tile === notCurrentPlayer.tile) {
+      document.getElementById('tile_' + notCurrentPlayer.tile).innerHTML = `<p>${notCurrentPlayer.tile}</p>`; // leave the notcurrentplayer in the tile it is placed in
+      currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll); // moves the currentplayers steps the dice has rolled
+      setPlayerImageInTile(currentPlayer); // updates pictures into the new tile 
+      setPlayerImageInTile(notCurrentPlayer); // not current player image remains in same tile
+    }
     currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll);  // places the currentplayer into the tile. You have to add the value of the diceroll
-
     boardFunction(); // Calls the function again, since you get another spin
 
     // to be able to display the 6 in the dice. 
@@ -71,7 +72,6 @@ function boardFunction() {
       console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile) // ????????
       setPlayerImageInTile(currentPlayer);  // place the image in the tile it has moved to
     }
-
   }
 
   // switch statement setting the traps showing in a popup.  
@@ -145,7 +145,6 @@ function boardFunction() {
     default:
   }
 
-
   // figures out which player turn it is and updates the points.
   if (currentPlayer === playerOne) {  // if currentplayer equals playerOne --> set th playerone. playerTurn to true and the opposite. 
     document.getElementById("playerOnePoints").innerHTML = `<h2>Player 1 <h2/> <p></p>`
@@ -158,9 +157,7 @@ function boardFunction() {
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
   }
-
 }
-
 
 // function that places the current player in tile. If hthere is not a tile to be placed in -->
 function setCurrenPlayerInTile(currentPlayer, diceRoll) {
@@ -186,7 +183,6 @@ function setCurrenPlayerInTile(currentPlayer, diceRoll) {
     }
   }
 }
-
 
 // places the image in the tile. 
 function setPlayerImageInTile(currentPlayer) {
