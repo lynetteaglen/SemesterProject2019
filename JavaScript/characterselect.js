@@ -3,7 +3,6 @@
 let popup = document.getElementById("myPopup");
 let closeButton = document.getElementsByClassName("closeBtn")[0];
 
-
 // Hides the popup modal 
 function hidePopUp() {
   popup.style.display = "none";
@@ -73,5 +72,3 @@ function getInfo(id) {
       showPopUp(result, id);
     })
 }
-
-

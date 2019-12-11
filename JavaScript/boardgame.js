@@ -148,12 +148,12 @@ function boardFunction() {
 
   // figures out which player turn it is and updates the points.
   if (currentPlayer === playerOne) {  // if currentplayer equals playerOne --> set th playerone. playerTurn to true and the opposite. 
-    document.getElementById("playerOnePoints").innerHTML = `<h2>Player 1 <h2/> <p></p>`
+    document.getElementById("playerOnePoints").innerHTML = `<p>Player 1 <p/> <p></p>`
     document.getElementById("playerOnePoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>` // displayes the points of the player 
     playerOne.isPlayerTurn = false;
     playerTwo.isPlayerTurn = true;
   } else if (currentPlayer === playerTwo) {
-    document.getElementById("playerTwoPoints").innerHTML = `<h2>Player 2 <h2/> <p></p>`
+    document.getElementById("playerTwoPoints").innerHTML = `<p>Player 2 <p/> <p></p>`
     document.getElementById("playerTwoPoints").innerHTML += `<p>${currentPlayer.tile}  /30</p>`
     playerOne.isPlayerTurn = true;
     playerTwo.isPlayerTurn = false;
@@ -207,5 +207,4 @@ function setPlayerImageInTile(currentPlayer) {
     }
   }
 }
-
 

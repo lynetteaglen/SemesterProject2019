@@ -11,6 +11,10 @@
 
 <body>
 
+  <span id="speaker-btn" class="[ speaker ]">Sound &nbsp; On</span>
+
+  <audio src="/Song /A Song of Ice and Fire.wav" id="audio" autoplay="true"></audio>
+
   <div class="[ fullscreen-background ]">
     <video loop muted autoplay>
       <source src="Videos/fog.mp4">
@@ -18,17 +22,19 @@
   </div>
 
   <h1 class="[ header ]">Game of Gnomes</h1>
-  <!--Player points-->
-  <div id="playerOnePoints">
-    <p>Player 1</p>
-  </div>
-  <!-- Lynette Fix -->
+
+
   <div id="playerOneName"></div>
-  <div id="playerTwoPoints">
-    <p>Player 2</p>
+  <div id="playerOnePoints">
+    <p> &nbsp; &nbsp; Player 1</p>
   </div>
-  <!-- Lynette Fix -->
+
+
   <div id="playerTwoName"></div>
+  <div id="playerTwoPoints">
+    <p>&nbsp; &nbsp; Player 2</p>
+  </div>
+
 
 
 
@@ -72,7 +78,6 @@
         <p>29</p>
       </div>
       <div id="tile_30" class="[ tiles-30 board ]">
-        <img src="Images/throne.svg"></img>
       </div>
       <div id="tile_20" class="[ tiles-20 board ]">
         <p>20</p>
@@ -156,8 +161,9 @@
     </div>
 
   </main>
-  <script src="objects.js"></script>
-  <script src="boardgame.js"></script>
+  <script src="/JavaScript/speaker.js"></script>
+  <script src="/JavaScript/objects.js"></script>
+  <script src="/JavaScript/boardgame.js"></script>
 
 </body>
 

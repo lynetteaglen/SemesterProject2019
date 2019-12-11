@@ -1,0 +1,152 @@
+@font-face{
+    font-family: got; 
+    src: url(Fonts/got.ttf); 
+}
+
+body {
+    line-height: 1.5;
+}
+
+.header{
+    font-family: 'got', serif; 
+    color: #AEAEAF; 
+    font-size: 2.5em; 
+    text-align: center;  
+    margin-top: 1%; 
+    margin-bottom: 3%; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+
+h2{
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+p{
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+// Sound 
+
+.speaker{
+    font-family: 'got', serif; 
+    color: #AEAEAF; 
+    font-size: 1em; 
+    text-align: center;  
+    margin-top: 2%; 
+    margin-bottom: 2%; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+.speaker:hover{
+    cursor: pointer;
+    box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+}
+
+
+// Button in cards 
+
+.character-card-button{
+    font-family: 'got', serif; 
+    color: #AEAEAF; 
+    text-align: center;
+    line-height: 1.5em;
+    font-size: 1.4em; 
+    background-color:  #202020;
+    padding: 5%; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+
+}
+
+button:hover{
+    box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+    cursor: pointer;
+}
+
+
+// BoardGame
+
+// Play game button 
+.playGame{
+    text-align: center;
+    margin-top: 2%; 
+
+}
+    .playGame_button{
+    font-family: 'got', serif; 
+    color: #AEAEAF; 
+    text-align: center;
+    font-size: 1em; 
+    background-color:  #000000;
+    padding: 1%;
+    padding-left: 5%; 
+    padding-right:5%; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+    }
+
+    .playGame_button:hover{
+        box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+        cursor: pointer;
+        background-color:  #000000;
+    }
+
+
+    /*Points for players*/
+
+#playerOneName{
+    float: left;
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+
+#playerTwoName{
+    float: right; 
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent; 
+}
+
+#playerOnePoints{
+    float: left;
+    margin-left: 0; 
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent;
+
+    p{
+        margin-right: 0; 
+    }
+}
+
+
+#playerTwoPoints{
+    margin-right: 0; 
+    float: right;
+    font-family: 'got', serif; 
+    background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
+    -webkit-background-clip: text; 
+    color: transparent;
+    
+    p{
+        margin-right: 0; 
+    }
+}
