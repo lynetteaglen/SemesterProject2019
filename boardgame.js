@@ -15,7 +15,6 @@ function showPopUp(popup) {
 }
 
 
-
 // Board game function
 function boardFunction() {
 
