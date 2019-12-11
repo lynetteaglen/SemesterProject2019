@@ -253,11 +253,11 @@ audio{
 
     .board{
         display: inline-block; 
-        border: 5px solid #DDDDE0; 
+        border: 5px solid rgb(129, 129, 129); 
         width: 70px;
         height: 70px;       
         padding: 20px;
-        background-color: black; 
+        background-color: rgb(255, 255, 255); 
 
         p{
             font-family: serif;
@@ -283,9 +283,14 @@ div[class*="tiles-"]{
 }
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29{
-    background-color: rgb(85, 0, 0); 
+    background-color: rgb(70, 70, 70);  
 }
 
+
+
+.diceAndButton{
+    margin-top: -5%; 
+}
 
 #dice{
     text-align: center;
