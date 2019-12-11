@@ -180,6 +180,10 @@ button:hover {
   margin-right: 0;
 }
 
+.diceAmount {
+  font-size: 1em;
+}
+
 .winner-text {
   text-align: center;
   margin-bottom: 15%;
@@ -290,6 +294,7 @@ button:hover {
 
 .tile_player2 {
   float: left;
+  margin-top: -72%;
   z-index: 10 !important;
 }
 
@@ -450,6 +455,26 @@ div[class*=tiles-] {
   margin-right: 40%;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.newGame {
+  text-align: center;
+}
+.newGame button {
+  font-family: "got", serif;
+  color: #AEAEAF;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #202020;
+  padding: 1%;
+  margin-top: -18%;
+  margin-bottom: 5%;
+  background: linear-gradient(#3a3a3a, #c5c5c5, #3a3a3a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.newGame button:hover {
+  cursor: pointer;
 }
 
 footer {

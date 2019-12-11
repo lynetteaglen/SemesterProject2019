@@ -48,9 +48,6 @@
   }
 
 
-.header-top{
-   
-}
 /*Tiles- styling*/
 
 .board-game{
@@ -90,6 +87,7 @@ margin-top: 3%;
 
 .tile_player2{
     float: left;
+    margin-top: -72%; 
     z-index: 10 !important; 
 }
 

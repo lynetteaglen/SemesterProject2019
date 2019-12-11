@@ -9,6 +9,31 @@
 
 
 
+.newGame{
+    text-align: center;
+
+    button{
+        font-family: 'got', serif; 
+        color: #AEAEAF; 
+        text-align: center;
+        font-size: 1.4em; 
+        background-color:  #202020;
+        padding: 1%; 
+        margin-top: -18%; 
+        margin-bottom: 5%; 
+        background: linear-gradient(rgb(58, 58, 58), rgb(197, 197, 197), rgb(58, 58, 58));
+        -webkit-background-clip: text; 
+        color: transparent; 
+    }
+
+    button:hover{
+        cursor: pointer;
+        
+    }
+}
+
+
+
 footer{
     background-color: black; 
     bottom: 0; 
