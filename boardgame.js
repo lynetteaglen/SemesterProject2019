@@ -1,7 +1,8 @@
 // placing the players in tile 0, also known as the start
 document.getElementById("tile_0").innerHTML += `<img class="tile_player1" src="${playerOne.playerImg}" width="50%" />`
 document.getElementById("tile_0").innerHTML += `<img class="tile_player2" src="${playerTwo.playerImg}" width="50%" />`
-
+document.getElementById('playerOneName').innerHTML = sessionStorage.getItem('player1name');
+document.getElementById('playerTwoName').innerHTML = sessionStorage.getItem('player2name');
 // Popups 
 let popup = document.getElementById("popupDiceRollSix");
 
@@ -33,7 +34,7 @@ function boardFunction() {
 
   // Rolls dice from 1-6 and then displayes it into html. 
   let diceRoll = (Math.floor(Math.random() * 6) + 1);
-  document.getElementById("dice").innerHTML = `<p></p>`
+  document.getElementById("dice").innerHTML = "";
   document.getElementById("dice").innerHTML += `<p>${diceRoll}</p>`
   console.log(currentPlayer.PlayerName);
   // console.log("Diceroll: " + diceRoll)
@@ -69,7 +70,7 @@ function boardFunction() {
     }
     else { // if the players are NOT in the same tile  --> 
       currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll)  // place the currentplayer in the number of steps the dice has rolled 
-      console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile) // ????????
+      console.log("Player: " + currentPlayer.id + " Tile " + currentPlayer.tile)
       setPlayerImageInTile(currentPlayer);  // place the image in the tile it has moved to
     }
   }

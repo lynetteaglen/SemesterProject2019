@@ -40,10 +40,14 @@ function saveStorage(id) { // Saving the value of the cards into session storage
   let name = ["player1", "player2"];
   if (player === false) {
     sessionStorage.setItem(name[0], charName);
+    charName = charName.replace(/([A-Z])/g, ' $1').trim();
+    sessionStorage.setItem(name[0] + "name", charName)
     player = true;
   }
   else {
     sessionStorage.setItem(name[1], charName);
+    charName = charName.replace(/([A-Z])/g, ' $1').trim();
+    sessionStorage.setItem(name[1] + "name", charName)
   }
   popup.style.display = "none";
 
