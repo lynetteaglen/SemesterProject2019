@@ -118,7 +118,7 @@ button:hover{
     margin-top: 2%; 
 
 }
-    .playGame_button{
+.playGame_button{
     font-family: 'got', serif; 
     color: #AEAEAF; 
     text-align: center;
@@ -130,28 +130,36 @@ button:hover{
     background: linear-gradient(rgb(97, 97, 97), rgb(223, 223, 223), rgb(97, 97, 97));
     -webkit-background-clip: text; 
     color: transparent; 
-    }
+}
 
-    .playGame_button:hover{
-        box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
-        cursor: pointer;
-        background-color:  #000000;
-    }
-
-
-    /*Points for players*/
+.playGame_button:hover{
+    box-shadow:  1px 5px 40px 10px rgba(184, 184, 184, 0.5);
+    cursor: pointer;
+    background-color:  #000000;
+}
 
 
-    .playerContainer1{
-        margin-top: -4%; 
-    }
-    
-    .playerContainer2{
-        float: right; 
-        margin-top: -2%;  
-    }
+    // paragraph in trap 
+.trap-text{
+    font-family: sans-serif;
+    padding: 2%; 
+    font-size: 1.5em;
+  }
 
 
+ /*Points for players*/
+
+
+.playerContainer1{
+    margin-top: -4%; 
+}
+
+.playerContainer2{
+    float: right; 
+    margin-top: -2%;  
+}
+
+// player names and amount
 
 #playerOneName{
     display: block; 
@@ -202,6 +210,9 @@ button:hover{
 .diceAmount{
     font-size: 1.5em;;
 }
+
+
+// Final page
 
 .winner-text{
     text-align: center;

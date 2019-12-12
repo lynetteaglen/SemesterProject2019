@@ -149,6 +149,12 @@ button:hover {
   background-color: #000000;
 }
 
+.trap-text {
+  font-family: sans-serif;
+  padding: 2%;
+  font-size: 1.5em;
+}
+
 /*Points for players*/
 .playerContainer1 {
   margin-top: -4%;
@@ -232,7 +238,7 @@ button:hover {
   cursor: pointer;
 }
 
-.gamePopup {
+.popup-game {
   display: none;
   position: fixed;
   z-index: 1;
@@ -245,9 +251,7 @@ button:hover {
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* Popup Content */
-.popup-content {
+.popup-game-content {
   text-align: center;
   background-color: #202020;
   color: white;
@@ -259,16 +263,9 @@ button:hover {
   width: 80%;
   align-content: center;
 }
-
-.popup-text {
+.popup-game-text {
   margin-left: 25%;
   margin-right: 25%;
-}
-
-.trap-text {
-  font-family: sans-serif;
-  padding: 2%;
-  font-size: 1.5em;
 }
 
 /*button popup*/
@@ -284,7 +281,6 @@ button:hover {
   color: transparent;
 }
 
-/*Tiles- styling*/
 .board-game {
   display: grid;
   grid-template-columns: repeat(10, 10%);
@@ -434,7 +430,9 @@ div[class*=tiles-] {
 }
 
 .cardSelected {
-  box-shadow: 10px 10px 40px 5px rgba(233, 233, 233, 0.5);
+  box-shadow: 10px 10px 40px 5px rgba(243, 243, 243, 0.5);
+  background: none;
+  background-color: #222222;
 }
 
 /*Row 1*/
@@ -449,8 +447,10 @@ div[class*=tiles-] {
 }
 
 .arya {
-  padding-top: 12%;
-  padding-bottom: 15%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 .cards-3 {

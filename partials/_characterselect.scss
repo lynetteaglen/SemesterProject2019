@@ -51,7 +51,7 @@
   }
 
 
-
+// popup buttons 
   #selectBtn{
     font-family: 'got', serif; 
     color: #AEAEAF; 
@@ -82,8 +82,11 @@
     cursor: pointer;
   }
 
+  // card
   .cardSelected{
-      box-shadow: 10px 10px 40px 5px rgba(233, 233, 233, 0.5);
+      box-shadow: 10px 10px 40px 5px rgba(243, 243, 243, 0.5);
+      background: none; 
+      background-color: rgb(34, 34, 34); 
   }
  
 
@@ -100,8 +103,10 @@
     }
 
     .arya{
-        padding-top: 12%; 
-        padding-bottom: 15%; 
+        padding-top: 5%; 
+        padding-bottom: 5%; 
+        padding-left: 25%; 
+        padding-right: 25%; 
     }
 
     .cards-3{
