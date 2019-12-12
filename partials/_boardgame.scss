@@ -31,6 +31,13 @@
   .popup-text{
       margin-left: 25%; 
       margin-right: 25%; 
+      
+  }
+
+  .trap-text{
+    font-family: sans-serif;
+    padding: 2%; 
+    font-size: 1.5em;
   }
 
   /*button popup*/ 
@@ -97,7 +104,10 @@ border-bottom: 4px solid rgb(148, 148, 148);
 }
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29{
-background-color: rgb(109, 109, 109);  
+background-color: rgb(70, 70, 70);  
+  p{
+    color: white; 
+  }
 }
 
 
@@ -115,4 +125,8 @@ text-align: center;
 font-size: 2em;
 margin: 0; 
 padding: 0; 
+
+  p{
+    font-family: sans-serif;
+  }
 }

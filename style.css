@@ -97,6 +97,7 @@ a {
   background: linear-gradient(#616161, #dfdfdf, #616161);
   -webkit-background-clip: text;
   color: transparent;
+  margin-top: -3%;
 }
 
 button:hover {
@@ -181,7 +182,7 @@ button:hover {
 }
 
 .diceAmount {
-  font-size: 1em;
+  font-size: 1.5em;
 }
 
 .winner-text {
@@ -245,6 +246,12 @@ button:hover {
   margin-right: 25%;
 }
 
+.trap-text {
+  font-family: sans-serif;
+  padding: 2%;
+  font-size: 1.5em;
+}
+
 /*button popup*/
 #rolled {
   font-family: "got", serif;
@@ -304,7 +311,10 @@ div[class*=tiles-] {
 }
 
 .tiles-5, .tiles-13, .tiles-19, .tiles-24, .tiles-29 {
-  background-color: #6d6d6d;
+  background-color: #464646;
+}
+.tiles-5 p, .tiles-13 p, .tiles-19 p, .tiles-24 p, .tiles-29 p {
+  color: white;
 }
 
 .tiles-30 {
@@ -320,6 +330,9 @@ div[class*=tiles-] {
   font-size: 2em;
   margin: 0;
   padding: 0;
+}
+#dice p {
+  font-family: sans-serif;
 }
 
 .cards {
@@ -369,7 +382,7 @@ div[class*=tiles-] {
   margin-right: 25%;
   background: none;
   color: #dfdfdf;
-  font-family: "got", serif;
+  font-family: sans-serif;
   line-height: 2em;
 }
 .cards #selectBtn {
@@ -399,7 +412,7 @@ div[class*=tiles-] {
   cursor: pointer;
 }
 .cards .cardSelected {
-  box-shadow: 10px 10px 40px 5px rgba(184, 184, 184, 0.5);
+  box-shadow: 10px 10px 40px 5px rgba(233, 233, 233, 0.5);
 }
 .cards .cards-1 {
   grid-column: 2/3;
@@ -410,8 +423,8 @@ div[class*=tiles-] {
   grid-row: 1;
 }
 .cards .arya {
-  padding-top: 11%;
-  padding-bottom: 10%;
+  padding-top: 12%;
+  padding-bottom: 15%;
 }
 .cards .cards-3 {
   grid-column: 4/5;

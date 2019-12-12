@@ -44,7 +44,7 @@ function boardFunction() {
     document.getElementById("popupContent").innerHTML =
       `<div class="[ characters ]">
       <h2>You rolled a 6</h2>
-      <p>The Gods are with you. Continue your journey!</p>
+      <p class="[ trap-text ]">The Gods are with you. Continue your journey!</p>
       </div>
       <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
       `;
@@ -82,7 +82,8 @@ function boardFunction() {
       showPopUp(popup);
       document.getElementById("popupContent").innerHTML =
         `<div class="[ characters ]">
-          <p>${trapOne.alertMessage}</p>
+          <h2>Trap</h2>
+          <p class="[ trap-text ]">${trapOne.alertMessage}</p>
           </div>
           <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
           `;
@@ -95,7 +96,8 @@ function boardFunction() {
       showPopUp(popup);
       document.getElementById("popupContent").innerHTML =
         `<div class="[ characters ]">
-          <p>${trapTwo.alertMessage}</p>
+          <h2>Trap</h2>
+          <p class="[ trap-text ]">${trapTwo.alertMessage}</p>
           </div>
           <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
           `;
@@ -108,7 +110,8 @@ function boardFunction() {
       showPopUp(popup);
       document.getElementById("popupContent").innerHTML =
         `<div class="[ characters ]">
-          <p>${trapThree.alertMessage}</p>
+          <h2>Trap</h2>
+          <p class="[ trap-text ]">${trapThree.alertMessage}</p>
           </div>
           <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
           `;
@@ -121,7 +124,8 @@ function boardFunction() {
       showPopUp(popup);
       document.getElementById("popupContent").innerHTML =
         `<div class="[ characters ]">
-          <p>${trapFour.alertMessage}</p>
+          <h2>Trap</h2>
+          <p class="[ trap-text ]">${trapFour.alertMessage}</p>
           </div>
           <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
           `;
@@ -134,7 +138,8 @@ function boardFunction() {
       showPopUp(popup);
       document.getElementById("popupContent").innerHTML =
         `<div class="[ characters ]">
-          <p>${trapFive.alertMessage}</p>
+          <h2>Trap</h2>
+          <p class="[ trap-text ]">${trapFive.alertMessage}</p>
           </div>
           <button id="rolled" onclick="hidePopUp(popup)">Continue</button> 
           `;

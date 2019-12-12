@@ -6,7 +6,6 @@ let closeButton = document.getElementsByClassName("closeBtn")[0];
 // Hides the popup modal 
 function hidePopUp() {
   popup.style.display = "none";
-
 }
 
 // Shows the popup
@@ -26,8 +25,6 @@ function showPopUp(result, id) {
       <button id="selectBtn" data-character="${thisName}" onclick="saveStorage(${id})">Select Player</button> 
     `; // getting an attribute. the name who is saved here is for example Arya Stark
 }
-
-
 
 let player = false;
 // Saving the value of the cards into session storage
@@ -49,8 +46,6 @@ function saveStorage(id) { // Saving the value of the cards into session storage
     sessionStorage.setItem(name[1] + "name", charName)
   }
   popup.style.display = "none";
-
-
   // when card is selected it gets the id
   function selectCards() {
     let selectedCard = document.querySelector("#character-card-" + id);
@@ -58,7 +53,6 @@ function saveStorage(id) { // Saving the value of the cards into session storage
   }
   //selectedCard.classList.remove('cardSelected');
   selectCards();
-
 }
 
 //Fetching the API

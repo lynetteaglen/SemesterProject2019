@@ -23,7 +23,7 @@ const playerTwo = {
 const trapOne = {
     tileNum: 5,
     penalty: 1,
-    alertMessage: "Quickly hide! A whitewalker is coming. Go back 1 tile"
+    alertMessage: "Quickly hide. A whitewalker is coming. Go back 1 tile"
 }
 
 const trapTwo = {
