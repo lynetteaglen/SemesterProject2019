@@ -50,7 +50,7 @@ function boardFunction() {
       `;
     if (currentPlayer.tile === notCurrentPlayer.tile) {
       document.getElementById('tile_' + notCurrentPlayer.tile).innerHTML = `<p>${notCurrentPlayer.tile}</p>`; // leave the notcurrentplayer in the tile it is placed in
-      currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll); // moves the currentplayers steps the dice has rolled
+      currentPlayer.tile = setCurrenPlayerInTile(currentPlayer, diceRoll); // moves the currentplayer the amount that the dice has rolled
       setPlayerImageInTile(currentPlayer); // updates pictures into the new tile 
       setPlayerImageInTile(notCurrentPlayer); // not current player image remains in same tile
     }
@@ -165,7 +165,7 @@ function boardFunction() {
   }
 }
 
-// function that places the current player in tile. If hthere is not a tile to be placed in -->
+// function that places the current player in tile. If there is not a tile to be placed in -->
 function setCurrenPlayerInTile(currentPlayer, diceRoll) {
   try {
     document.getElementById('tile_' + currentPlayer.tile).innerHTML = `<p>${currentPlayer.tile}</p>`;

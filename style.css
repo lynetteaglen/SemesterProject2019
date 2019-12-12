@@ -384,6 +384,7 @@ div[class*=tiles-] {
   color: #dfdfdf;
   font-family: sans-serif;
   line-height: 2em;
+  font-size: 1.5em;
 }
 .cards #selectBtn {
   font-family: "got", serif;
