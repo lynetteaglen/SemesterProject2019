@@ -5,13 +5,13 @@
     row-gap: 3vw;
     grid-template-columns: repeat(10, 10%);
 
-    .cards-border{
+    &-border{
         border: 5px solid linear-gradient(rgb(83, 83, 83), rgb(211, 211, 211), rgb(83, 83, 83));; 
         width: 200px; 
         height: 100%; 
         background-color: black; 
     }
-
+}
     /* The popup (background) / card select page*/
 .popup {
     display: none;
@@ -25,12 +25,9 @@
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
-    
-  }
-  
-  /* Popup in card select page */
-  .popup-content {
-    text-align: center;
+
+    &-content{
+        text-align: center;
     background-color: #202020;
     color: white; 
     margin: auto;
@@ -40,17 +37,20 @@
     border: 1px solid black;
     width: 60%;
     align-content: center;
+    }
+
+    &-text{
+        margin-left: 25%; 
+        margin-right: 25%; 
+        background: none; 
+        color: rgb(223, 223, 223);  
+        font-family: sans-serif; 
+        line-height: 2em;
+        font-size: 1.5em; 
+    }
   }
 
-  .popup-text{
-      margin-left: 25%; 
-      margin-right: 25%; 
-      background: none; 
-      color: rgb(223, 223, 223);  
-      font-family: sans-serif; 
-      line-height: 2em;
-      font-size: 1.5em; 
-  }
+
 
   #selectBtn{
     font-family: 'got', serif; 
@@ -150,4 +150,4 @@
         width:100%; 
     }
 
-}
+
